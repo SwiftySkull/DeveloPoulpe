@@ -1,0 +1,29 @@
+// == Screen sizes
+$small: 440px; // vars.$small;
+$medium: 720px; // vars.$medium;
+$inter: 900px; // vars.$inter;
+$large: 1080px; // vars.$large;
+$big: 1300px; // vars.$big;
+$extreme: 1600px; // vars.$extreme;
+
+// == Colors
+$mainColor: purple; // vars.$mainColor;
+$secondaryColor: black; // vars.$secondaryColor;
+$thirdColor: black; // vars.$thirdColor;
+$textColor: white; // vars.$textColor;
+
+$borderBackground: rgb(0, 0, 0);
+$background: linear-gradient(90deg, $borderBackground,$borderBackground, $borderBackground, $mainColor, $borderBackground, $borderBackground, $borderBackground); // vars.$background;
+
+// == Box
+
+$header: 150px; // vars.$header;
+
+// == Fonts
+
+$poiret : 'Poiret One', cursive; // vars.$poiret;
+$mono: 'PT Mono', monospace; // vars.$mono;
+$syncopate: 'Syncopate', sans-serif; // vars.$syncopate;
+
+
+// == Hover & Shadows

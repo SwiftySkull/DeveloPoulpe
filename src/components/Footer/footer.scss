@@ -1,0 +1,59 @@
+@use 'src/styles/_vars';
+
+#footer {
+  height: 100%;
+  min-height: 150px;
+  background: linear-gradient(90deg, black,black, black, green, black, black, black);
+  position: relative;
+  display: flex;
+
+  .icons8 {
+    padding: 2px;
+    border-radius: 2px;
+    align-self: flex-end;
+
+    &:hover, &:focus {
+      background-color: #fff;
+      color: vars.$mainColor;
+    }
+
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  .cookie-button {
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    background: unset;
+    border: unset;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 100%;
+
+    &:focus, &:hover {
+      background-color: purple;
+    }
+
+    &:active {
+      background-color: white;
+    }
+  }
+
+  .cookie-text {
+    position: absolute;
+    bottom: 2px;
+    right: 80px;
+    border-radius: 2px;
+
+    &:hover, &:focus {
+      background-color: #fff;
+      color: vars.$mainColor;
+    }
+
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}

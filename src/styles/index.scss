@@ -1,0 +1,9 @@
+@use 'reset';
+@use 'vars';
+
+body {
+  scroll-behavior: smooth;
+  background: vars.$background;
+  font-family: vars.$mono;
+  color: vars.$textColor;
+}
