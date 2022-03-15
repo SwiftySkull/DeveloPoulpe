@@ -1,0 +1,11 @@
+@use 'src/styles/_vars';
+
+#contactModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(128, 0, 128, 0.534);
+  z-index: 150;
+}
