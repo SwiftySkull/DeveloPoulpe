@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink, Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 // == Import
 import contact from 'src/data/Languages-files/contact';
@@ -25,6 +26,8 @@ import './contact.scss';
  * @param {function} updateInputValue Function to update the value of the input
  * @param {function} submitRequest Function to submit and send the request
  * @param {boolean} requestSent Display or not the message sent information modal
+ * @param {function} submitAccepted Captcha action to display the submit button
+ * @param {boolean} submitButton Display status for the submit button
  */
 const Contact = ({
   language,
@@ -37,6 +40,8 @@ const Contact = ({
   updateInputValue,
   submitRequest,
   requestSent,
+  submitAccepted,
+  submitButton,
 }) => {
   const cookies = new Cookies();
 
@@ -86,7 +91,12 @@ const Contact = ({
           <p>{contact[language].form.message}</p>
           <textarea required id="field-message" className="input-field" value={fieldMessage} onChange={(evt) => updateInputValue('fieldMessage', evt.target.value)} />
         </label>
-        <button type="submit" className="contact-button" onSubmit={sendTheRequest}>{contact[language].form.button}</button>
+        <ReCAPTCHA
+          sitekey="6LdNtcYeAAAAAHz96KIH6RavkNPPAssjz26-n7EM"
+          onChange={submitAccepted}
+          className="captcha"
+        />
+        <button style={{ display: submitButton ? 'block' : 'none' }} type="submit" className="contact-button" onSubmit={sendTheRequest}>{contact[language].form.button}</button>
       </form>
       <ContactModal display={requestSent} />
     </div>
@@ -115,6 +125,11 @@ Contact.propTypes = {
 
   /** Display or not the message sent information modal */
   requestSent: PropTypes.bool.isRequired,
+
+  /** Captcha action to display the submit button */
+  submitAccepted: PropTypes.func.isRequired,
+  /** Display status for the submit button */
+  submitButton: PropTypes.bool.isRequired,
 };
 
 Contact.defaultProps = {

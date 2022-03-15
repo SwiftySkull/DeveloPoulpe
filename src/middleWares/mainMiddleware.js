@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import axios from 'axios';
+import emailjs, { init } from '@emailjs/browser';
 
 import {
 
@@ -8,10 +9,17 @@ import {
 import {
   SUBMIT_REQUEST,
   requestSent,
+  contactError,
 } from 'src/actions/contactActions';
+
+import {
+  contactValidator,
+  checkMailOrPhone,
+} from 'src/utils';
 
 // URL for the Axios requests
 export const URL = 'http://localhost:8888/api';
+init('f15s27RrZoXbjheHP');
 
 /**
  * MiddleWare for the main and authentification area.
@@ -30,25 +38,47 @@ const mainMiddleware = (store) => (next) => (action) => {
       } = state.contact;
 
       // Validator
-      let sendRequest = false;
-      if (
-        fieldName !== ''
-        && fieldSubject !== ''
-        && fieldMessage !== ''
-        && (
-          fieldEmail !== ''
-          || fieldTel !== ''
-        )
-      ) {
-        sendRequest = true;
-      }
+      const checkMoP = checkMailOrPhone(fieldEmail, fieldTel);
 
-      if (sendRequest) {
-        // emailjs
-        store.dispatch(requestSent());
+      if (!checkMoP) {
+        console.log(418);
+        store.dispatch(contactError(418));
         next(action);
         break;
       }
+
+      const sendRequest = contactValidator(
+        fieldName,
+        fieldEmail,
+        fieldTel,
+        fieldSubject,
+        fieldMessage,
+      );
+
+      if (sendRequest) {
+        // emailjs
+        const templateParams = {
+          name: fieldName,
+          email: fieldEmail,
+          tel: fieldTel,
+          subject: fieldSubject,
+          message: fieldMessage,
+        };
+
+        emailjs.send('service_6ocqlb5', 'template_0c3zm1h', templateParams, 'f15s27RrZoXbjheHP')
+          .then((response) => {
+            console.log(200);
+            store.dispatch(requestSent());
+          })
+          .catch((error) => {
+            console.log(502);
+            store.dispatch(contactError(502));
+          });
+        next(action);
+        break;
+      }
+      console.log(400);
+      store.dispatch(contactError(400));
     }
       next(action);
       break;

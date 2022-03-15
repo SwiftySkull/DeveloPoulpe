@@ -5,6 +5,8 @@ import {
 import {
   REQUEST_SENT,
   CLOSE_CONTACT_MODAL,
+  CONTACT_ERROR,
+  SUBMIT_ACCEPTED,
 } from 'src/actions/contactActions';
 
 const initialState = {
@@ -15,6 +17,7 @@ const initialState = {
   fieldMessage: '',
   requestSent: false,
   errorStatus: 0,
+  submitButton: false,
 };
 
 /**
@@ -22,6 +25,21 @@ const initialState = {
  */
 function contactReducer(state = initialState, action) {
   switch (action.type) {
+    /** Display the submit button after Captcha validation */
+    case SUBMIT_ACCEPTED:
+      return {
+        ...state,
+        submitButton: true,
+      };
+
+    /** Display the modal box with an error message */
+    case CONTACT_ERROR:
+      return {
+        ...state,
+        requestSent: true,
+        errorStatus: action.errorStatus,
+      };
+
     /** Update the value of the form fields */
     case UPDATE_FIELD_VALUE:
       return {
@@ -52,6 +70,7 @@ function contactReducer(state = initialState, action) {
         ...state,
         requestSent: false,
         errorStatus: 0,
+        submitButton: false,
       };
 
     default:

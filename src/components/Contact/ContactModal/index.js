@@ -48,6 +48,12 @@ const ContactModal = ({
             <p className="message-modal">{contactModal[language].error400.p2} <a href="mailto:support@developoulpe.fr">support@developoulpe.fr</a></p>
           </>
         )}
+        {errorStatus === 418 && (
+          <>
+            <p className="message-modal first-message">{contactModal[language].error418.p1}</p>
+            <p className="message-modal">{contactModal[language].error418.p2}</p>
+          </>
+        )}
         <button type="button" className="button-modal" onClick={closeContactModal}>{contactModal[language].button}</button>
       </div>
     </div>

@@ -45,13 +45,13 @@
 
       .input-field {
         margin-top: 0.5rem;
-        height: 1.5rem;
+        height: 1.6rem;
         font-size: 1.2rem;
         font-family: vars.$mono;
         border: unset;
 
         &:focus {
-          border: 3px solid vars.$mainColor;
+          border: 2px solid vars.$mainColor;
         }
 
         &#field-message {
@@ -64,6 +64,10 @@
           }
         }
       }
+    }
+
+    .captcha {
+      margin: 2rem 0 1rem;
     }
 
     .contact-button {
