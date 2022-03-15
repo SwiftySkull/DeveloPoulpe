@@ -4,6 +4,7 @@ import {
 
 import {
   REQUEST_SENT,
+  CLOSE_CONTACT_MODAL,
 } from 'src/actions/contactActions';
 
 const initialState = {
@@ -13,6 +14,7 @@ const initialState = {
   fieldSubject: '',
   fieldMessage: '',
   requestSent: false,
+  errorStatus: 0,
 };
 
 /**
@@ -36,6 +38,20 @@ function contactReducer(state = initialState, action) {
       return {
         ...state,
         requestSent: true,
+        fieldName: '',
+        fieldEmail: '',
+        fieldTel: '',
+        fieldSubject: '',
+        fieldMessage: '',
+        errorStatus: 200,
+      };
+
+      /** Close the modal message to inform the request is sent */
+    case CLOSE_CONTACT_MODAL:
+      return {
+        ...state,
+        requestSent: false,
+        errorStatus: 0,
       };
 
     default:

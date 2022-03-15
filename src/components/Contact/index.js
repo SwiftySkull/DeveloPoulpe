@@ -7,7 +7,7 @@ import Cookies from 'universal-cookie';
 // == Import
 import contact from 'src/data/Languages-files/contact';
 
-import ContactModal from './ContactModal';
+import ContactModal from 'src/containers/Contact/ContactModal';
 
 import './contact.scss';
 
@@ -50,6 +50,12 @@ const Contact = ({
     }
   }, []);
 
+  /** Function to prevent the refresh of the page before sending the request */
+  const sendTheRequest = (evt) => {
+    evt.preventDefault();
+    submitRequest();
+  };
+
   return (
     <div id="contact">
       <h1>{contact[language].title}</h1>
@@ -57,7 +63,7 @@ const Contact = ({
         <p>{contact[language].p1}</p>
         <p>{contact[language].p2} <a href="mailto:aurelien.beneyton@developoulpe.fr">aurelien.beneyton@developoulpe.fr</a>.</p>
       </div>
-      <form className="contac-form" onSubmit={submitRequest}>
+      <form className="contac-form" onSubmit={sendTheRequest}>
         <p>{contact[language].form_p3}</p>
         <p>{contact[language].form_p4}</p>
         <label htmlFor="field-name" className="label-name">
@@ -80,7 +86,7 @@ const Contact = ({
           <p>{contact[language].form.message}</p>
           <textarea required id="field-message" className="input-field" value={fieldMessage} onChange={(evt) => updateInputValue('fieldMessage', evt.target.value)} />
         </label>
-        <button type="submit" className="contact-button" onSubmit={submitRequest}>{contact[language].form.button}</button>
+        <button type="submit" className="contact-button" onSubmit={sendTheRequest}>{contact[language].form.button}</button>
       </form>
       <ContactModal display={requestSent} />
     </div>
