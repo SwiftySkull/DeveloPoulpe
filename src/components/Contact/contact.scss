@@ -1,5 +1,86 @@
 @use 'src/styles/_vars';
 
 #contact {
-  
+  width: 90%;
+  margin: 0 auto;
+
+  h1 {
+    font-family: vars.$syncopate;
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 0 1rem;
+  }
+
+  .contact-content {
+    margin: 1rem 0 3rem;
+    line-height: 1.3rem;
+
+    p {
+      margin: 2rem 0;
+    }
+  }
+
+  .contac-form {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+
+    >p {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+
+      &.label-name p::after,
+      &.label-subject p::after,
+      &.label-message p::after {
+        content: '*';
+        margin-left: 1rem;
+        color: red;
+      }
+
+      .input-field {
+        margin-top: 0.5rem;
+        height: 1.5rem;
+        font-size: 1.2rem;
+        font-family: vars.$mono;
+        border: unset;
+
+        &:focus {
+          border: 3px solid vars.$mainColor;
+        }
+
+        &#field-message {
+          width: 600px;
+          resize: vertical;
+          min-height: 100px;
+
+          &:focus {
+            border: 4px solid vars.$mainColor;
+          }
+        }
+      }
+    }
+
+    .contact-button {
+      margin: 1rem 0;
+      border: unset;
+      border-radius: 5px;
+      padding: 10px 0;
+      width: 180px;
+      font-size: 1rem;
+
+      &:hover, &:focus {
+        background-color: vars.$mainColor;
+      }
+
+      &:active {
+        color: white;
+      }
+    }
+  }
 }
