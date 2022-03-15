@@ -17,4 +17,47 @@
       margin: 0 1rem;
     }
   }
+
+  .cookie-content {
+    width: 80%;
+    margin: 3rem auto;
+    line-height: 1.5rem;
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 3rem;
+
+      li {
+        list-style: disc;
+      }
+    }
+  }
+
+  .cookie-status {
+    text-align: center;
+  }
+
+  .cookie-choice {
+    width: 80%;
+    text-align: center;
+    margin: 2rem auto;
+
+    button {
+      margin: 0 3rem;
+      border: unset;
+      border-radius: 5px;
+      padding: 5px;
+
+      &:hover, &:focus {
+        background-color: vars.$mainColor;
+      }
+
+      &:active {
+        color: white;
+      }
+    }
+  }
 }

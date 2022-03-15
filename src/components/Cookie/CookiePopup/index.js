@@ -34,12 +34,6 @@ const CookiePopup = ({
       <p>{cookiePopup[language].p1}</p>
       <p>{cookiePopup[language].p2}</p>
       <p>{cookiePopup[language].p3}</p>
-      <p>{cookiePopup[language].p4}</p>
-      <ul>
-        <li>{cookiePopup[language].li1}</li>
-        <li>{cookiePopup[language].li2}</li>
-        <li>{cookiePopup[language].li3}</li>
-      </ul>
       <button type="button" className="close-button" onClick={acceptCookies}>+</button>
       <div className="cookie-choice">
         <button type="button" onClick={acceptCookies}>{cookiePopup[language].accept}</button>

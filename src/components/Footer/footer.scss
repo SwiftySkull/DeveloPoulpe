@@ -3,7 +3,7 @@
 #footer {
   height: 100%;
   min-height: 150px;
-  background: linear-gradient(90deg, black,black, black, green, black, black, black);
+  background: linear-gradient(90deg, black, black, black,black, black, green, black, black, black, black, black);
   position: relative;
   display: flex;
 
@@ -28,9 +28,13 @@
     right: 10px;
     background: unset;
     border: unset;
-    height: fit-content;
-    width: fit-content;
+    height: 30px;
+    width: 30px;
     border-radius: 100%;
+
+    img {
+      height: 100%;
+    }
 
     &:focus, &:hover {
       background-color: purple;
@@ -44,7 +48,7 @@
   .cookie-text {
     position: absolute;
     bottom: 2px;
-    right: 80px;
+    right: 50px;
     border-radius: 2px;
 
     &:hover, &:focus {

@@ -13,7 +13,7 @@ $thirdColor: black; // vars.$thirdColor;
 $textColor: white; // vars.$textColor;
 
 $borderBackground: rgb(0, 0, 0);
-$background: linear-gradient(90deg, $borderBackground,$borderBackground, $borderBackground, $mainColor, $borderBackground, $borderBackground, $borderBackground); // vars.$background;
+$background: linear-gradient(90deg, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $mainColor, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground); // vars.$background;
 
 // == Box
 
