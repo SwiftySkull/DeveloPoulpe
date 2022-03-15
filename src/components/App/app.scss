@@ -1,5 +1,5 @@
 @use 'src/styles/_vars';
 
 .app {
-  margin-top: vars.$header;;
+  margin-top: calc(vars.$header + 2rem);
 }

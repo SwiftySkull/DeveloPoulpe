@@ -35,17 +35,17 @@ const ContactModal = ({
         {errorStatus === 200 && (
           <p className="message-modal first-message">{contactModal[language].success}</p>
         )}
-        {errorStatus === 502 && (
-          <>
-            <p className="message-modal first-message">{contactModal[language].error502.p1}</p>
-            <p className="message-modal">{contactModal[language].error502.p2}</p>
-            <p className="message-modal">{contactModal[language].error502.p3} <a href="mailto:support@developoulpe.fr">support@developoulpe.fr</a></p>
-          </>
-        )}
         {errorStatus === 400 && (
           <>
             <p className="message-modal first-message">{contactModal[language].error400.p1}</p>
-            <p className="message-modal">{contactModal[language].error400.p2} <a href="mailto:support@developoulpe.fr">support@developoulpe.fr</a></p>
+            <p className="message-modal">{contactModal[language].error400.p2}</p>
+            <p className="message-modal">{contactModal[language].error400.p3} <a href="mailto:support@developoulpe.fr">support@developoulpe.fr</a></p>
+          </>
+        )}
+        {errorStatus === 502 && (
+          <>
+            <p className="message-modal first-message">{contactModal[language].error502.p1}</p>
+            <p className="message-modal">{contactModal[language].error502.p2} <a href="mailto:support@developoulpe.fr">support@developoulpe.fr</a></p>
           </>
         )}
         {errorStatus === 418 && (

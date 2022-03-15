@@ -10,7 +10,7 @@ export const contactValidator = (name, email, tel, subject, message) => {
   let sendRequest = true;
 
   // Name
-  const nameRegex = /[a-zA-Z0-9'-]+/g;
+  const nameRegex = /[a-zA-Z0-9' -]+/g;
   const nameFound = name.match(nameRegex);
 
   if (name === '' || name === null || name === undefined || nameFound === null) {
@@ -18,7 +18,7 @@ export const contactValidator = (name, email, tel, subject, message) => {
   }
 
   // Subject
-  const subjectRegex = /[a-zA-Z0-9?!:'-]+/g;
+  const subjectRegex = /[a-zA-Z0-9?!:' -]+/g;
   const subjectFound = subject.match(subjectRegex);
 
   if (subject === '' || subject === null || subject === undefined || subjectFound === null) {

@@ -7,9 +7,9 @@ import {
 } from 'src/actions/mainActions';
 
 import {
-  SUBMIT_REQUEST,
   requestSent,
   contactError,
+  SEND_REQUEST,
 } from 'src/actions/contactActions';
 
 import {
@@ -28,7 +28,7 @@ const mainMiddleware = (store) => (next) => (action) => {
   const state = store.getState();
 
   switch (action.type) {
-    case SUBMIT_REQUEST: {
+    case SEND_REQUEST: {
       const {
         fieldName,
         fieldEmail,
@@ -56,29 +56,17 @@ const mainMiddleware = (store) => (next) => (action) => {
       );
 
       if (sendRequest) {
-        // emailjs
-        const templateParams = {
-          name: fieldName,
-          email: fieldEmail,
-          tel: fieldTel,
-          subject: fieldSubject,
-          message: fieldMessage,
-        };
-
-        emailjs.send('service_6ocqlb5', 'template_0c3zm1h', templateParams, 'f15s27RrZoXbjheHP')
-          .then((response) => {
-            console.log(200);
+        emailjs.sendForm('service_6ocqlb5', 'template_0c3zm1h', action.form, 'f15s27RrZoXbjheHP')
+          .then(() => {
             store.dispatch(requestSent());
           })
           .catch((error) => {
-            console.log(502);
-            store.dispatch(contactError(502));
+            store.dispatch(contactError(400));
           });
         next(action);
         break;
       }
-      console.log(400);
-      store.dispatch(contactError(400));
+      store.dispatch(contactError(502));
     }
       next(action);
       break;

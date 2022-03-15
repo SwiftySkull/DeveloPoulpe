@@ -24,10 +24,10 @@ import './contact.scss';
  * @param {string} fieldSubject Value of the input Subject
  * @param {string} fieldMessage Value of the input Message
  * @param {function} updateInputValue Function to update the value of the input
- * @param {function} submitRequest Function to submit and send the request
  * @param {boolean} requestSent Display or not the message sent information modal
  * @param {function} submitAccepted Captcha action to display the submit button
  * @param {boolean} submitButton Display status for the submit button
+ * @param {function} sendRequest Send the form
  */
 const Contact = ({
   language,
@@ -38,10 +38,10 @@ const Contact = ({
   fieldSubject,
   fieldMessage,
   updateInputValue,
-  submitRequest,
   requestSent,
   submitAccepted,
   submitButton,
+  sendRequest,
 }) => {
   const cookies = new Cookies();
 
@@ -58,7 +58,7 @@ const Contact = ({
   /** Function to prevent the refresh of the page before sending the request */
   const sendTheRequest = (evt) => {
     evt.preventDefault();
-    submitRequest();
+    sendRequest(evt.target);
   };
 
   return (
@@ -73,29 +73,30 @@ const Contact = ({
         <p>{contact[language].form_p4}</p>
         <label htmlFor="field-name" className="label-name">
           <p>{contact[language].form.name}</p>
-          <input required pattern="[a-zA-Z0-9'-]+" id="field-name" className="input-field" type="text" value={fieldName} onChange={(evt) => updateInputValue('fieldName', evt.target.value)} />
+          <input name="name" required pattern="[a-zA-Z0-9' -]+" id="field-name" className="input-field" type="text" value={fieldName} onChange={(evt) => updateInputValue('fieldName', evt.target.value)} />
         </label>
         <label htmlFor="field-email" className="label-email">
           <p>{contact[language].form.email}</p>
-          <input pattern="[a-zA-Z0-9-\.]+@[a-zA-Z0-9\.-]+\.[a-zA-Z0-9]+" id="field-email" className="input-field" type="email" value={fieldEmail} onChange={(evt) => updateInputValue('fieldEmail', evt.target.value)} />
+          <input name="email" pattern="[a-zA-Z0-9-\.]+@[a-zA-Z0-9\.-]+\.[a-zA-Z0-9]+" id="field-email" className="input-field" type="email" value={fieldEmail} onChange={(evt) => updateInputValue('fieldEmail', evt.target.value)} />
         </label>
         <label htmlFor="field-tel" className="label-tel">
           <p>{contact[language].form.tel}</p>
-          <input pattern="[0-9]{10}" id="field-tel" className="input-field" type="tel" value={fieldTel} onChange={(evt) => updateInputValue('fieldTel', evt.target.value)} />
+          <input name="tel" pattern="[0-9]{10}" id="field-tel" className="input-field" type="tel" value={fieldTel} onChange={(evt) => updateInputValue('fieldTel', evt.target.value)} />
         </label>
         <label htmlFor="field-subject" className="label-subject">
           <p>{contact[language].form.subject}</p>
-          <input required pattern="[a-zA-Z0-9\?!:\-']+" id="field-subject" className="input-field" type="text" value={fieldSubject} onChange={(evt) => updateInputValue('fieldSubject', evt.target.value)} />
+          <input name="subject" required pattern="[a-zA-Z0-9?!:' -]+" id="field-subject" className="input-field" type="text" value={fieldSubject} onChange={(evt) => updateInputValue('fieldSubject', evt.target.value)} />
         </label>
         <label htmlFor="field-message" className="label-message">
           <p>{contact[language].form.message}</p>
-          <textarea required id="field-message" className="input-field" value={fieldMessage} onChange={(evt) => updateInputValue('fieldMessage', evt.target.value)} />
+          <textarea name="message" required id="field-message" className="input-field" value={fieldMessage} onChange={(evt) => updateInputValue('fieldMessage', evt.target.value)} />
         </label>
         <ReCAPTCHA
           sitekey="6LdNtcYeAAAAAHz96KIH6RavkNPPAssjz26-n7EM"
           onChange={submitAccepted}
           className="captcha"
         />
+        <div className="g-recaptcha" data-sitekey="6LdNtcYeAAAAAHz96KIH6RavkNPPAssjz26-n7EM" />
         <button style={{ display: submitButton ? 'block' : 'none' }} type="submit" className="contact-button" onSubmit={sendTheRequest}>{contact[language].form.button}</button>
       </form>
       <ContactModal display={requestSent} />
@@ -120,9 +121,6 @@ Contact.propTypes = {
   /** Function to update the value of the input */
   updateInputValue: PropTypes.func.isRequired,
 
-  /** Function to submit the request */
-  submitRequest: PropTypes.func.isRequired,
-
   /** Display or not the message sent information modal */
   requestSent: PropTypes.bool.isRequired,
 
@@ -130,6 +128,9 @@ Contact.propTypes = {
   submitAccepted: PropTypes.func.isRequired,
   /** Display status for the submit button */
   submitButton: PropTypes.bool.isRequired,
+
+  /** Send the form */
+  sendRequest: PropTypes.func.isRequired,
 };
 
 Contact.defaultProps = {

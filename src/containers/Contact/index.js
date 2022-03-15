@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { updateInputValue } from 'src/actions/mainActions';
-import { submitRequest, submitAccepted } from 'src/actions/contactActions';
+import { submitAccepted, sendRequest } from 'src/actions/contactActions';
 
 import Contact from 'src/components/Contact';
 
@@ -30,14 +30,14 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(updateInputValue(field, value));
   },
 
-  /** Submit and send the request */
-  submitRequest: () => {
-    dispatch(submitRequest());
-  },
-
   /** Will display the submit button after Captcha is validated */
   submitAccepted: () => {
     dispatch(submitAccepted());
+  },
+
+  /** Submit and send the request */
+  sendRequest: (form) => {
+    dispatch(sendRequest(form));
   },
 });
 

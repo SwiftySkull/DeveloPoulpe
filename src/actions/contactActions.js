@@ -1,16 +1,12 @@
 // ACTIONS TYPES
 
-export const SUBMIT_REQUEST = 'SUBMIT_REQUEST';
 export const REQUEST_SENT = 'REQUEST_SENT';
 export const CLOSE_CONTACT_MODAL = 'CLOSE_CONTACT_MODAL';
 export const CONTACT_ERROR = 'CONTACT_ERROR';
 export const SUBMIT_ACCEPTED = 'SUBMIT_ACCEPTED';
+export const SEND_REQUEST = 'SEND_REQUEST';
 
 // ACTIONS CREATORS
-
-export const submitRequest = () => ({
-  type: SUBMIT_REQUEST,
-});
 
 export const requestSent = () => ({
   type: REQUEST_SENT,
@@ -27,4 +23,9 @@ export const contactError = (errorStatus) => ({
 
 export const submitAccepted = () => ({
   type: SUBMIT_ACCEPTED,
+});
+
+export const sendRequest = (form) => ({
+  type: SEND_REQUEST,
+  form,
 });
