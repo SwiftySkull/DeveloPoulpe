@@ -3,7 +3,9 @@
 #cookiePopup {
   position: fixed;
   bottom: 0;
-  background: blue;
+  background: rgb(9, 114, 0);
+  // background: vars.$background;
+  // border: 10px solid vars.$mainColor;
   border-radius: 10px;
   width: 100%;
   padding: 10px;

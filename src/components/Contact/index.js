@@ -12,6 +12,8 @@ import ContactModal from 'src/containers/Contact/ContactModal';
 
 import './contact.scss';
 
+import { contactUrl } from 'src/data/urls';
+
 // == Composant
 /**
  * Contact page component
@@ -47,7 +49,7 @@ const Contact = ({
 
   useEffect(() => {
     if (cookieStatus || cookies.get('cookies-accept') === 'true') {
-      cookies.set('url', '/contact', '/');
+      cookies.set('url', contactUrl, '/');
     }
 
     if (!cookieStatus && cookies.get('cookies-accept') !== 'true') {

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Services from 'src/components/Services';
+import Identity from 'src/components/Identity';
 
 /**
  * To display data in the component
@@ -21,4 +21,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 // === Assistant creation for the component
-export default connect(mapStateToProps, mapDispatchToProps)(Services);
+export default connect(mapStateToProps, mapDispatchToProps)(Identity);

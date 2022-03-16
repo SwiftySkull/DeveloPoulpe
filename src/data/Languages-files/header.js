@@ -1,13 +1,13 @@
 export default {
   fr: {
     home: 'Accueil',
-    services: 'Services',
+    identity: 'Présentation',
     project: 'Projets',
     contact: 'Contact',
   },
   en: {
     home: 'Home',
-    services: 'Services',
+    identity: 'Presentation',
     project: 'Projects',
     contact: 'Contact',
   },

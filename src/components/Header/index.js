@@ -9,6 +9,15 @@ import { french, english } from 'src/data/languages';
 
 import './header.scss';
 
+import {
+  projectUrl,
+  identityUrl,
+  contactUrl,
+  cookiesUrl,
+  changeLangUrl,
+  homeUrl,
+} from 'src/data/urls';
+
 // == Composant
 /**
  * Header component
@@ -28,21 +37,21 @@ const Header = ({
     <div id="header">
       <nav>
         <div>
-          <NavLink to="/">{header[language].home}</NavLink>
-          <NavLink to="/services">{header[language].services}</NavLink>
+          <NavLink to={homeUrl}>{header[language].home}</NavLink>
+          <NavLink to={identityUrl}>{header[language].identity}</NavLink>
         </div>
         <h1>
-          <NavLink to="/" className="title">
+          <NavLink to={homeUrl} className="title">
             DeveloPoulpe
           </NavLink>
         </h1>
         <div>
-          <NavLink to="/projets">{header[language].project}</NavLink>
-          <NavLink to="/contact">{header[language].contact}</NavLink>
+          <NavLink to={projectUrl}>{header[language].project}</NavLink>
+          <NavLink to={contactUrl}>{header[language].contact}</NavLink>
         </div>
       </nav>
-      <Link to="/lang/fr" className="language french"><img src={french} alt="Langue française" onClick={() => changeLanguage('fr')} /></Link>
-      <Link to="/lang/en" className="language english"><img src={english} alt="English language" onClick={() => changeLanguage('en')} /></Link>
+      <Link to={`${changeLangUrl}/fr`} className="language french"><img src={french} alt="Langue française" onClick={() => changeLanguage('fr')} /></Link>
+      <Link to={`${changeLangUrl}/en`} className="language english"><img src={english} alt="English language" onClick={() => changeLanguage('en')} /></Link>
     </div>
   );
 };

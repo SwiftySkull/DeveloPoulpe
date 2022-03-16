@@ -5,9 +5,11 @@ import { NavLink, Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
 // == Import
-import services from 'src/data/Languages-files/services';
+import identity from 'src/data/Languages-files/identity';
 
-import './services.scss';
+import './identity.scss';
+
+import { identityUrl } from 'src/data/urls';
 
 // == Composant
 /**
@@ -16,7 +18,7 @@ import './services.scss';
  * @param {string} language Language of the website
  * @param {boolean} cookieStatus Boolean to determine if cookies are accepted or not
  */
-const Services = ({
+const Identity = ({
   language,
   cookieStatus,
 }) => {
@@ -24,7 +26,7 @@ const Services = ({
 
   useEffect(() => {
     if (cookieStatus || cookies.get('cookies-accept') === 'true') {
-      cookies.set('url', '/services', '/');
+      cookies.set('url', identityUrl, '/');
     }
 
     if (!cookieStatus && cookies.get('cookies-accept') !== 'true') {
@@ -33,13 +35,13 @@ const Services = ({
   }, []);
 
   return (
-    <div id="services">
-      <h1>{services[language].title}</h1>
+    <div id="identity">
+      <h1>{identity[language].title}</h1>
     </div>
   );
 };
 
-Services.propTypes = {
+Identity.propTypes = {
   /** Language of the website */
   language: PropTypes.string,
 
@@ -47,10 +49,10 @@ Services.propTypes = {
   cookieStatus: PropTypes.bool.isRequired,
 };
 
-Services.defaultProps = {
+Identity.defaultProps = {
   /** Default language in French */
   language: 'fr',
 };
 
 // == Export
-export default Services;
+export default Identity;

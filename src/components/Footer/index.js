@@ -9,6 +9,8 @@ import footer from 'src/data/Languages-files/footer';
 
 import './footer.scss';
 
+import { cookiesUrl } from 'src/data/urls';
+
 // == Composant
 const Footer = ({
   language,
@@ -20,8 +22,8 @@ const Footer = ({
   return (
     <div id="footer">
       <a className="icons8" href="https://icons8.com/">{footer[language].icons}</a>
-      <NavLink to="/cookies" className="cookie-text">{footer[language].title}</NavLink>
-      <Link to="/cookies" className="cookie-button"><img src={cookieImg} alt="Cookie" /></Link>
+      <NavLink to={cookiesUrl} className="cookie-text">{footer[language].title}</NavLink>
+      <Link to={cookiesUrl} className="cookie-button"><img src={cookieImg} alt="Cookie" /></Link>
     </div>
   );
 };

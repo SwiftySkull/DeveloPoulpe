@@ -10,6 +10,8 @@ import cookieImg from 'src/data/cookie';
 
 import './cookie.scss';
 
+import { cookiesUrl } from 'src/data/urls';
+
 // == Composant
 /**
  * Cookie acceptation component
@@ -29,7 +31,7 @@ const Cookie = ({
 
   useEffect(() => {
     if (cookieStatus || cookies.get('cookies-accept') === 'true') {
-      cookies.set('url', '/cookies', '/');
+      cookies.set('url', cookiesUrl, '/');
     }
 
     if (!cookieStatus && cookies.get('cookies-accept') !== 'true') {

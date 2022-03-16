@@ -9,6 +9,8 @@ import home from 'src/data/Languages-files/home';
 
 import './home.scss';
 
+import { homeUrl } from 'src/data/urls';
+
 // == Composant
 /**
  * Home component
@@ -24,7 +26,7 @@ const Home = ({
 
   useEffect(() => {
     if (cookieStatus || cookies.get('cookies-accept') === 'true') {
-      cookies.set('url', '/', '/');
+      cookies.set('url', homeUrl, '/');
     }
     if (!cookieStatus && cookies.get('cookies-accept') !== 'true') {
       cookies.remove('url');

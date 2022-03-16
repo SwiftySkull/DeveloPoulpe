@@ -9,6 +9,8 @@ import projects from 'src/data/Languages-files/projects';
 
 import './projects.scss';
 
+import { projectUrl } from 'src/data/urls';
+
 // == Composant
 /**
  * Contact page component
@@ -24,7 +26,7 @@ const Projects = ({
 
   useEffect(() => {
     if (cookieStatus || cookies.get('cookies-accept') === 'true') {
-      cookies.set('url', '/projets', '/');
+      cookies.set('url', projectUrl, '/');
     }
 
     if (!cookieStatus && cookies.get('cookies-accept') !== 'true') {

@@ -13,9 +13,18 @@ import Header from 'src/containers/Header';
 import Footer from 'src/containers/Footer';
 import Lang from 'src/containers/Lang';
 import Projects from 'src/containers/Projects';
-import Services from 'src/containers/Services';
+import Identity from 'src/containers/Identity';
 
 import './app.scss';
+
+import {
+  projectUrl,
+  identityUrl,
+  contactUrl,
+  cookiesUrl,
+  changeLangUrl,
+  homeUrl,
+} from 'src/data/urls';
 
 // == Composant
 const App = ({
@@ -41,12 +50,12 @@ const App = ({
     <div className="app">
       <Header />
       <Routes>
-        <Route path="/projets" element={<Projects />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/cookies" element={<Cookie />} />
-        <Route path="/lang/:lang" element={<Lang />} />
-        <Route path="/" element={<Home />} />
+        <Route path={projectUrl} element={<Projects />} />
+        <Route path={identityUrl} element={<Identity />} />
+        <Route path={contactUrl} element={<Contact />} />
+        <Route path={cookiesUrl} element={<Cookie />} />
+        <Route path={`${changeLangUrl}/:lang`} element={<Lang />} />
+        <Route path={homeUrl} element={<Home />} />
         {/* <Route path="*" element={<Error />} /> */}
       </Routes>
       <CookiePopup />
