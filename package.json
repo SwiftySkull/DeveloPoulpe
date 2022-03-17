@@ -57,6 +57,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.4.0",
     "axios": "^0.24.0",
+    "dateformat": "^5.0.3",
     "prop-types": "^15.7.2",
     "proptypes": "^1.1.0",
     "react": "^17.0.1",

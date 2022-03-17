@@ -3,6 +3,8 @@
 export const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE';
 export const OPEN_FORMA = 'OPEN_FORMA';
 export const CLOSE_FORMA = 'CLOSE_FORMA';
+export const OPEN_EXPE = 'OPEN_EXPE';
+export const CLOSE_EXPE = 'CLOSE_EXPE';
 
 // ACTIONS CREATORS
 
@@ -16,7 +18,15 @@ export const openForma = (formaId) => ({
   formaId,
 });
 
-export const closeForma = (formaId) => ({
+export const closeForma = () => ({
   type: CLOSE_FORMA,
-  formaId,
+});
+
+export const openExpe = (expeId) => ({
+  type: OPEN_EXPE,
+  expeId,
+});
+
+export const closeExpe = () => ({
+  type: CLOSE_EXPE,
 });

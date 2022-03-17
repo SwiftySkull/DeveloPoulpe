@@ -1,9 +1,12 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/no-danger */
 /* eslint-disable max-len */
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink, Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
+import dateFormat, { i18n } from 'dateformat';
 
 // == Import
 import identity from 'src/data/Languages-files/identity';
@@ -23,6 +26,9 @@ import { identityUrl } from 'src/data/urls';
  * @param {number} chosenForma ID of the formation chosen to see details
  * @param {function} openForma Open a formation informations
  * @param {function} closeForma Close a formation informations
+ * @param {number} chosenExpe ID of the experience chosen to see details
+ * @param {function} openExpe Open a experience informations
+ * @param {function} closeExpe Close a experience informations
  */
 const Identity = ({
   language,
@@ -30,6 +36,9 @@ const Identity = ({
   chosenForma,
   openForma,
   closeForma,
+  chosenExpe,
+  openExpe,
+  closeExpe,
 }) => {
   const cookies = new Cookies();
 
@@ -43,16 +52,64 @@ const Identity = ({
     }
   }, []);
 
-  // const openForma = (evt) => {
-  //   console.log(evt.target.value);
-  // };
-
-  // const closeForma = (evt) => {
-  //   console.log(evt.target.value);
-  // };
-
   function createMarkup(text) {
     return { __html: text };
+  }
+
+  i18n.monthNames = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
+  if (language === 'fr') {
+    i18n.monthNames = [
+      'Jan',
+      'Fev',
+      'Mar',
+      'Avr',
+      'Mai',
+      'Juin',
+      'Juil',
+      'Aout',
+      'Sept',
+      'Oct',
+      'Nov',
+      'Dec',
+      'Janvier',
+      'Février',
+      'Mars',
+      'Avril',
+      'Mai',
+      'Juin',
+      'Juillet',
+      'Août',
+      'Septembre',
+      'Octobre',
+      'Novembre',
+      'Décembre',
+    ];
   }
 
   return (
@@ -70,18 +127,24 @@ const Identity = ({
         <p><strong>{identity[language].nickname}</strong> : Swifty / Poulpy</p>
         <p><strong>{identity[language].birth}</strong> : 02/04/1994</p>
         <p><strong>{identity[language].home}</strong> : Saint-Brieuc</p>
+        <div className="description">
+          <h3>Description :</h3>
+          <p>
+            Jeune développeur web
+          </p>
+        </div>
         <div className="formation">
           <h3>Formations :</h3>
           <ul>
-            {identity[language].formations.map((forma) => (
-              <li className="one-forma" key={forma.id} id={`forma-${forma.id}`}>
+            {identity[language].formations?.map((forma) => (
+              <li className={chosenForma !== forma.id ? 'one-forma' : 'one-forma close'} key={forma.id} id={`forma-${forma.id}`}>
                 <h4>{forma.title}</h4>
                 <button
                   type="button"
                   className={chosenForma !== forma.id ? 'forma-plus' : 'forma-plus close'}
                   value={forma.id}
                   onClick={(evt) => (
-                    chosenForma !== forma.id ? openForma(evt) : closeForma(evt)
+                    chosenForma !== forma.id ? openForma(evt) : closeForma()
                   )}
                 >+
                 </button>
@@ -99,14 +162,58 @@ const Identity = ({
           <div className="one-forma-content">
             <h3>{identity[language].formations[chosenForma - 1]?.title}</h3>
             <div className="forma-content" dangerouslySetInnerHTML={createMarkup(identity[language].formations[chosenForma - 1]?.content)} />
+            <div className="what-I-learned">
+              <h4>{identity[language].what_I_learned}</h4>
+              <ul>
+                {identity[language].formations[chosenForma - 1]?.learned?.map((skill, index) => (
+                  <li className="skill" key={index}>{skill}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         )}
-        <div className="description">
-          <h3>Description :</h3>
-          <p>
-            Jeune développeur web
-          </p>
+        <div className="experiences">
+          <h3>Experiences professionnelles :</h3>
+          <ul>
+            {identity[language].experiences?.map((expe) => (
+              <li className={chosenExpe !== expe.id ? 'one-expe' : 'one-expe close'} key={expe.id} id={`expe-${expe.id}`}>
+                <h4>{expe.title}</h4>
+                <h5>{expe.place}</h5>
+                <button
+                  type="button"
+                  className={chosenExpe !== expe.id ? 'expe-plus' : 'expe-plus close'}
+                  value={expe.id}
+                  onClick={(evt) => (
+                    chosenExpe !== expe.id ? openExpe(evt) : closeExpe()
+                  )}
+                >+
+                </button>
+                {chosenExpe !== expe.id && (
+                  <button type="button" className="expe-plus-text" value={expe.id} onClick={openExpe}>{identity[language].read_more}...</button>
+                )}
+                {chosenExpe === expe.id && (
+                  <button type="button" className="expe-plus-text" value={expe.id} onClick={closeExpe}>{identity[language].read_less}...</button>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
+        {chosenExpe !== 0 && (
+          <div className="one-expe-content">
+            <h3>{identity[language].experiences[chosenExpe - 1]?.title}</h3>
+            <h4>{identity[language].experiences[chosenExpe - 1]?.place}</h4>
+            <p>{identity[language].start_in} {dateFormat(identity[language].experiences[chosenExpe - 1]?.start, 'mmmm yyyy')} -&gt; {identity[language].end_in} {dateFormat(identity[language].experiences[chosenExpe - 1]?.end, 'mmmm yyyy')}</p>
+            <div className="expe-content" dangerouslySetInnerHTML={createMarkup(identity[language].experiences[chosenExpe - 1]?.content)} />
+            <div className="what-I-learned">
+              <h4>{identity[language].what_I_learned}</h4>
+              <ul>
+                {identity[language].experiences[chosenExpe - 1]?.learned?.map((skill, index) => (
+                  <li className="skill" key={index}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -122,8 +229,16 @@ Identity.propTypes = {
   /** ID of the formation chosen to see details */
   chosenForma: PropTypes.number.isRequired,
 
+  /** Open/close the informations of a formation */
   openForma: PropTypes.func.isRequired,
   closeForma: PropTypes.func.isRequired,
+
+  /** ID of the experience chosen to see details */
+  chosenExpe: PropTypes.number.isRequired,
+
+  /** Open/close the informations of an experience */
+  openExpe: PropTypes.func.isRequired,
+  closeExpe: PropTypes.func.isRequired,
 };
 
 Identity.defaultProps = {

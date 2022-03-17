@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import Cookies from 'universal-cookie';
 
+import { closeForma, closeExpe } from 'src/actions/identityActions';
+
 import { changeLanguage } from 'src/actions/mainActions';
 
 import Header from 'src/components/Header';
@@ -26,6 +28,12 @@ const mapDispatchToProps = (dispatch) => ({
     const cookies = new Cookies();
     cookies.set('lang', language, '/');
     dispatch(changeLanguage(language));
+  },
+
+  /** Close the informations of the presentation page */
+  closePresentation: () => {
+    dispatch(closeForma());
+    dispatch(closeExpe());
   },
 });
 

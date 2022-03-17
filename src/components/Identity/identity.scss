@@ -47,7 +47,22 @@
       }
     }
 
+    .description {
+      margin: 2rem 0 3rem;
+      h3 {
+        font-family: vars.$syncopate;
+      }
+
+      >p {
+        &:nth-child(2) {
+          margin-left: 3rem;
+        }
+      }
+      
+    }
+
     .formation {
+
       h3 {
         margin: 2rem 0 1rem;
         font-family: vars.$syncopate;
@@ -57,20 +72,27 @@
         margin-bottom: 3rem;
         display: flex;
         justify-content: space-between;
-
+        flex-wrap: wrap;
+        
         .one-forma {  
           border-radius: 5px;
           background: vars.$secondColor;
           width: 300px;
           min-height: 70px;
-          height: fit-content;
+          height: 100px;
           padding: 5px;
           position: relative;
-    
+          margin-bottom: 3rem;
+
+          &.close {
+            border: 5px solid vars.$mainColor;
+            padding: 0;
+          }
+        
           .forma-plus {
             position: absolute;
             right: 10px;
-            top: 40px;
+            bottom: 5px;
             background-color: white;
             border: unset;
             color: black;
@@ -95,6 +117,15 @@
             &.close {
               transform: rotate(45deg);
               background-color: vars.$mainColor;
+
+              &:hover, &:focus {
+                background: white;
+                cursor: pointer;
+              }
+  
+              &:active {
+                color: vars.$mainColor;
+              }
             }
           }
 
@@ -124,6 +155,10 @@
       margin-top: 4rem;
       margin-bottom: 3rem;
 
+      &.close {
+        display: none;
+      }
+
       h3 {
         font-family: vars.$syncopate;
         text-align: center;
@@ -133,24 +168,197 @@
 
       .forma-content {
         line-height: 2rem;
+
+        strong {
+          font-weight: bold;
+        }
+
+        ul {
+          margin: 1rem 0 1rem 3rem;
+          list-style-type: disc;
+        }
+
+        img {
+          border-radius: 12px;
+        }
       }
+
+      .what-I-learned {
+        margin: 3rem 0 2rem;
+
+        h4 {
+          font-family: vars.$syncopate;
+          margin-bottom: 1rem;
+        }
+
+        ul {
+          margin-left: 3rem;
+          list-style: disc;
+          line-height: 2rem;
+        }
+      }
+    }
+
+    .experiences {
+
+      h3 {
+        margin: 2rem 0 1rem;
+        font-family: vars.$syncopate;
+      }
+
+      ul {
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .one-expe {  
+          border-radius: 5px;
+          background: vars.$secondColor;
+          width: 300px;
+          min-height: 70px;
+          height: 145px;
+          padding: 5px;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin-bottom: 3rem;
+
+          &.close {
+            border: 5px solid vars.$mainColor;
+            padding: 0;
+          }
+
+          h4 {
+            margin-bottom: 1rem;
+          }
+    
+          h5 {
+            text-align: right;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 2rem;
+          }
+
+          .expe-plus {
+            position: absolute;
+            right: 10px;
+            bottom: 5px;
+            background-color: white;
+            border: unset;
+            color: black;
+            font-weight: bold;
+            font-size: 1.8rem;
+            border-radius: 100%;
+            width: 1.5rem;
+            height: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover, &:focus {
+              background: vars.$mainColor;
+              cursor: pointer;
+            }
+
+            &:active {
+              color: white;
+            }
+
+            &.close {
+              transform: rotate(45deg);
+              background-color: vars.$mainColor;
+
+              &:hover, &:focus {
+                background: white;
+                cursor: pointer;
+              }
+  
+              &:active {
+                color: vars.$mainColor;
+              }
+            }
+          }
+
+          .expe-plus-text {
+            border: unset;
+            background: unset;
+            position: absolute;
+            right: -5px;
+            bottom: -30px;
+            color: white;
+            font-size: 1rem;
+
+            &:hover, &:focus {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+
+            &:active {
+              color: vars.$mainColor;
+            }
+          }
+        }
+      }
+    }
+
+    .one-expe-content {
+      margin-top: 4rem;
+      margin-bottom: 3rem;
 
       &.close {
         display: none;
       }
-    }
 
-    .description {
       h3 {
         font-family: vars.$syncopate;
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
       }
 
-      >p {
-        &:nth-child(2) {
-          margin-left: 3rem;
+      >h4 {
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .expe-content {
+        margin-top: 2rem;
+        line-height: 2rem;
+
+        strong {
+          font-weight: bold;
+        }
+
+        ul {
+          margin: 1rem 0 1rem 3rem;
+          list-style-type: disc;
+        }
+
+        img {
+          border-radius: 12px;
         }
       }
-      
+
+      .what-I-learned {
+        margin: 3rem 0 2rem;
+
+        h4 {
+          font-family: vars.$syncopate;
+          margin-bottom: 1rem;
+        }
+
+        ul {
+          margin-left: 3rem;
+          list-style: disc;
+          line-height: 2rem;
+        }
+      }
     }
+
   }
 }

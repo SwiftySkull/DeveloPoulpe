@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 import mainReducer from './mainReducer';
 import contactReducer from './contactReducer';
-import formationReducer from './formationReducer';
+import identityReducer from './identityReducer';
 
 /**
  * Combine all reducers.
@@ -10,7 +10,7 @@ import formationReducer from './formationReducer';
 const rootReducer = combineReducers({
   main: mainReducer,
   contact: contactReducer,
-  formation: formationReducer,
+  identity: identityReducer,
 });
 
 export default rootReducer;

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
@@ -13,7 +14,6 @@ import {
   projectUrl,
   identityUrl,
   contactUrl,
-  cookiesUrl,
   changeLangUrl,
   homeUrl,
 } from 'src/data/urls';
@@ -24,10 +24,12 @@ import {
  *
  * @param {string} language Language of the website
  * @param {function} changeLanguage Function to change the language
+ * @param {function} closePresentation Close the informations of the presentation page when changing page
  */
 const Header = ({
   language,
   changeLanguage,
+  closePresentation,
 }) => {
   useEffect(() => {
 
@@ -37,17 +39,17 @@ const Header = ({
     <div id="header">
       <nav>
         <div>
-          <NavLink to={homeUrl}>{header[language].home}</NavLink>
+          <NavLink onClick={closePresentation} to={homeUrl}>{header[language].home}</NavLink>
           <NavLink to={identityUrl}>{header[language].identity}</NavLink>
         </div>
         <h1>
-          <NavLink to={homeUrl} className="title">
+          <NavLink onClick={closePresentation} to={homeUrl} className="title">
             DeveloPoulpe
           </NavLink>
         </h1>
         <div>
-          <NavLink to={projectUrl}>{header[language].project}</NavLink>
-          <NavLink to={contactUrl}>{header[language].contact}</NavLink>
+          <NavLink onClick={closePresentation} to={projectUrl}>{header[language].project}</NavLink>
+          <NavLink onClick={closePresentation} to={contactUrl}>{header[language].contact}</NavLink>
         </div>
       </nav>
       <Link to={`${changeLangUrl}/fr`} className="language french"><img src={french} alt="Langue française" onClick={() => changeLanguage('fr')} /></Link>
@@ -61,6 +63,9 @@ Header.propTypes = {
   language: PropTypes.string,
   /** Function to change the language */
   changeLanguage: PropTypes.func.isRequired,
+
+  /** Close the informations of the presentation page when changing page */
+  closePresentation: PropTypes.func.isRequired,
 };
 
 Header.defaultProps = {
