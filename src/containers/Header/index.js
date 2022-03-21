@@ -3,7 +3,7 @@ import Cookies from 'universal-cookie';
 
 import { closeForma, closeExpe, closeOtherExpe } from 'src/actions/identityActions';
 
-import { changeLanguage } from 'src/actions/mainActions';
+import { changeLanguage, changeMenu } from 'src/actions/mainActions';
 
 import Header from 'src/components/Header';
 
@@ -13,6 +13,7 @@ import Header from 'src/components/Header';
 
 const mapStateToProps = (state) => ({
   language: state.main.language,
+  menuStatus: state.main.menuStatus,
 });
 
 /**
@@ -35,6 +36,12 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(closeForma());
     dispatch(closeExpe());
     dispatch(closeOtherExpe());
+    dispatch(changeMenu(false));
+  },
+
+  /** Open/Close the menu */
+  changeMenu: (menuStatus) => {
+    dispatch(changeMenu(menuStatus));
   },
 });
 

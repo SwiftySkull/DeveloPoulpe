@@ -99,8 +99,7 @@ const Contact = ({
           className="captcha"
         />
         <div className="g-recaptcha" data-sitekey="6LdNtcYeAAAAAHz96KIH6RavkNPPAssjz26-n7EM" />
-        {/* <button style={{ display: submitButton ? 'block' : 'none' }} type="submit" className="contact-button" onSubmit={sendTheRequest}>{contact[language].form.button}</button> */}
-        <button type="submit" className="contact-button" onSubmit={sendTheRequest}>{contact[language].form.button}</button>
+        <button style={{ display: submitButton ? 'block' : 'none' }} type="submit" className="contact-button" onSubmit={sendTheRequest}>{contact[language].form.button}</button>
       </form>
       <ContactModal display={requestSent} />
     </div>

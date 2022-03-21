@@ -28,7 +28,11 @@
     }
 
     ul {
-      margin-left: 3rem;
+      margin-left: 1.5rem;
+
+      @media (min-width: vars.$medium) {
+        margin-left: 3rem;
+      }
 
       li {
         list-style: disc;
@@ -41,15 +45,26 @@
   }
 
   .cookie-choice {
-    width: 80%;
     text-align: center;
     margin: 2rem auto;
+
+    @media (min-width: vars.$small) {
+      width: 100%;
+    }
+
+    @media (min-width: vars.$medium) {
+      width: 80%;
+    }
 
     button {
       margin: 0 3rem;
       border: unset;
       border-radius: 5px;
       padding: 5px;
+
+      @media (max-width: vars.$small) {
+        margin-bottom: 2rem;
+      }
 
       &:hover, &:focus {
         background-color: vars.$mainColor;

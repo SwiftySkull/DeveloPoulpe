@@ -4,6 +4,7 @@ export const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE';
 export const ACCEPT_COOKIES = 'ACCEPT_COOKIES';
 export const REFUSE_COOKIE = 'REFUSE_COOKIE';
 export const UPDATE_FIELD_VALUE = 'UPDATE_FIELD_VALUE';
+export const CHANGE_MENU = 'CHANGE_MENU';
 
 // ACTIONS CREATORS
 
@@ -24,4 +25,9 @@ export const updateInputValue = (field, value) => ({
   type: UPDATE_FIELD_VALUE,
   field,
   value,
+});
+
+export const changeMenu = (menuStatus) => ({
+  type: CHANGE_MENU,
+  menuStatus,
 });

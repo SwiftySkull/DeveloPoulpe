@@ -2,12 +2,14 @@ import {
   CHANGE_LANGUAGE,
   ACCEPT_COOKIES,
   REFUSE_COOKIE,
+  CHANGE_MENU,
 } from 'src/actions/mainActions';
 
 const initialState = {
   language: 'fr',
   cookieBox: false,
   cookieStatus: false,
+  menuStatus: false,
 };
 
 /**
@@ -15,6 +17,13 @@ const initialState = {
  */
 function mainReducer(state = initialState, action) {
   switch (action.type) {
+    /** Open/Close the menu */
+    case CHANGE_MENU:
+      return {
+        ...state,
+        menuStatus: action.menuStatus,
+      };
+
     /**
      * Change the language of the website
      */
