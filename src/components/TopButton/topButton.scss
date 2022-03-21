@@ -1,0 +1,30 @@
+@use 'src/styles/_vars';
+
+#topButton {
+  position: fixed;
+  bottom: 50px;
+  right: 15px;
+  height: 40px;
+  width: 40px;
+  z-index: 50;
+  border-radius: 100%;
+  border: unset;
+  background-color: vars.$secondColor;
+
+  @media (min-width: vars.$medium) {
+    height: 50px;
+    width: 50px;
+  }
+
+  &:hover, &:focus {
+    background-color: vars.$mainColor;
+  }
+
+  &:active {
+    background-color: white;
+  }
+
+  img {
+    width: 100%;
+  }
+}

@@ -10,10 +10,11 @@ import Cookie from 'src/containers/Cookie';
 import CookiePopup from 'src/containers/Cookie/CookiePopup';
 import Home from 'src/containers/Home';
 import Header from 'src/containers/Header';
+import Identity from 'src/containers/Identity';
 import Footer from 'src/containers/Footer';
 import Lang from 'src/containers/Lang';
 import Projects from 'src/containers/Projects';
-import Identity from 'src/containers/Identity';
+import TopButton from 'src/components/TopButton';
 
 import './app.scss';
 
@@ -59,6 +60,7 @@ const App = ({
         {/* <Route path="*" element={<Error />} /> */}
       </Routes>
       <CookiePopup />
+      <TopButton />
       <Footer />
     </div>
   );

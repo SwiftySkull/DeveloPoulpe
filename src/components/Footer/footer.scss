@@ -36,7 +36,7 @@
     }
 
     &:focus, &:hover {
-      background-color: purple;
+      background-color: vars.$mainColor;
     }
 
     &:active {

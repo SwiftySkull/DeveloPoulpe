@@ -29,7 +29,7 @@ const Footer = ({
 
   return (
     <div id="footer">
-      <a className="icons8" href="https://icons8.com/">{footer[language].icons}</a>
+      <a className="icons8" href="https://icons8.com/" target="_blank" rel="noreferrer noopener">{footer[language].icons}</a>
       <NavLink to={cookiesUrl} onClick={closePresentation} className="cookie-text">{footer[language].title}</NavLink>
       <Link to={cookiesUrl} onClick={closePresentation} className="cookie-button"><img src={cookieImg} alt="Cookie" /></Link>
     </div>
