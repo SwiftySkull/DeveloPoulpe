@@ -133,131 +133,131 @@ const Identity = ({
         <p><strong>{identity[language].nickname}</strong> : Swifty / Poulpy</p>
         <p><strong>{identity[language].birth}</strong> : 02/04/1994</p>
         <p><strong>{identity[language].home}</strong> : Saint-Brieuc</p>
-        <div className="description">
-          <h3>Description :</h3>
-          <div className="bio" dangerouslySetInnerHTML={createMarkup(identity[language].bio)} />
-        </div>
-        <div className="formation">
-          <h3>Formations :</h3>
-          <ul>
-            {identity[language].formations?.map((forma) => (
-              <li className={chosenForma !== forma.id ? 'one-forma' : 'one-forma close'} key={forma.id} id={`forma-${forma.id}`}>
-                <h4>{forma.title}</h4>
-                <button
-                  type="button"
-                  className={chosenForma !== forma.id ? 'forma-plus' : 'forma-plus close'}
-                  value={forma.id}
-                  onClick={(evt) => (
-                    chosenForma !== forma.id ? openForma(evt) : closeForma()
-                  )}
-                >+
-                </button>
-                {chosenForma !== forma.id && (
-                  <button type="button" className="forma-plus-text" value={forma.id} onClick={openForma}>{identity[language].read_more}...</button>
-                )}
-                {chosenForma === forma.id && (
-                  <button type="button" className="forma-plus-text" value={forma.id} onClick={closeForma}>{identity[language].read_less}...</button>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-        {chosenForma !== 0 && (
-          <div className="one-forma-content">
-            <h3>{identity[language].formations[chosenForma - 1]?.title}</h3>
-            <div className="forma-content" dangerouslySetInnerHTML={createMarkup(identity[language].formations[chosenForma - 1]?.content)} />
-            <div className="what-I-learned">
-              <h4>{identity[language].what_I_learned}</h4>
-              <ul>
-                {identity[language].formations[chosenForma - 1]?.learned?.map((skill, index) => (
-                  <li className="skill" key={index}>{skill}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        )}
-        <div className="experiences">
-          <h3>{identity[language].experience_title} :</h3>
-          <ul>
-            {identity[language].experiences?.map((expe) => (
-              <li className={chosenExpe !== expe.id ? 'one-expe' : 'one-expe close'} key={expe.id} id={`expe-${expe.id}`}>
-                <h4>{expe.title}</h4>
-                <h5>{expe.place}</h5>
-                <button
-                  type="button"
-                  className={chosenExpe !== expe.id ? 'expe-plus' : 'expe-plus close'}
-                  value={expe.id}
-                  onClick={(evt) => (
-                    chosenExpe !== expe.id ? openExpe(evt) : closeExpe()
-                  )}
-                >+
-                </button>
-                {chosenExpe !== expe.id && (
-                  <button type="button" className="expe-plus-text" value={expe.id} onClick={openExpe}>{identity[language].read_more}...</button>
-                )}
-                {chosenExpe === expe.id && (
-                  <button type="button" className="expe-plus-text" value={expe.id} onClick={closeExpe}>{identity[language].read_less}...</button>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-        {chosenExpe !== 0 && (
-          <div className="one-expe-content">
-            <h3>{identity[language].experiences[chosenExpe - 1]?.title}</h3>
-            <h4>{identity[language].experiences[chosenExpe - 1]?.place}</h4>
-            <p>{identity[language].start_in} {dateFormat(identity[language].experiences[chosenExpe - 1]?.start, 'mmmm yyyy')} -&gt; {identity[language].end_in} {dateFormat(identity[language].experiences[chosenExpe - 1]?.end, 'mmmm yyyy')}</p>
-            <div className="expe-content" dangerouslySetInnerHTML={createMarkup(identity[language].experiences[chosenExpe - 1]?.content)} />
-            <div className="what-I-learned">
-              <h4>{identity[language].what_I_learned}</h4>
-              <ul>
-                {identity[language].experiences[chosenExpe - 1]?.learned?.map((skill, index) => (
-                  <li className="skill" key={index}>{skill}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        )}
-        <div className="other-experiences">
-          <h3>{identity[language].other_experience_title} :</h3>
-          <ul>
-            {identity[language].other_experiences?.map((expe) => (
-              <li className={chosenOtherExpe !== expe.id ? 'one-expe' : 'one-expe close'} key={expe.id} id={`expe-${expe.id}`}>
-                <h4>{expe.title}</h4>
-                <button
-                  type="button"
-                  className={chosenOtherExpe !== expe.id ? 'expe-plus' : 'expe-plus close'}
-                  value={expe.id}
-                  onClick={(evt) => (
-                    chosenOtherExpe !== expe.id ? openOtherExpe(evt) : closeOtherExpe()
-                  )}
-                >+
-                </button>
-                {chosenOtherExpe !== expe.id && (
-                  <button type="button" className="expe-plus-text" value={expe.id} onClick={openOtherExpe}>{identity[language].read_more}...</button>
-                )}
-                {chosenOtherExpe === expe.id && (
-                  <button type="button" className="expe-plus-text" value={expe.id} onClick={closeOtherExpe}>{identity[language].read_less}...</button>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-        {chosenOtherExpe !== 0 && (
-          <div className="one-expe-content">
-            <h3>{identity[language].other_experiences[chosenOtherExpe - 1]?.title}</h3>
-            <div className="expe-content" dangerouslySetInnerHTML={createMarkup(identity[language].other_experiences[chosenOtherExpe - 1]?.content)} />
-            <div className="what-I-learned">
-              <h4>{identity[language].what_I_learned}</h4>
-              <ul>
-                {identity[language].other_experiences[chosenOtherExpe - 1]?.learned?.map((skill, index) => (
-                  <li className="skill" key={index}>{skill}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        )}
       </div>
+      <div className="description">
+        <h3>Description :</h3>
+        <div className="bio" dangerouslySetInnerHTML={createMarkup(identity[language].bio)} />
+      </div>
+      <div className="formation identity-bloc">
+        <h3>Formations :</h3>
+        <ul>
+          {identity[language].formations?.map((forma) => (
+            <li className={chosenForma !== forma.id ? 'identity-bloc-one one-forma' : 'identity-bloc-one one-forma close'} key={forma.id} id={`forma-${forma.id}`}>
+              <h4>{forma.title}</h4>
+              <button
+                type="button"
+                className={chosenForma !== forma.id ? 'identity-bloc-plus forma-plus' : 'identity-bloc-plus forma-plus close'}
+                value={forma.id}
+                onClick={(evt) => (
+                  chosenForma !== forma.id ? openForma(evt) : closeForma()
+                )}
+              >+
+              </button>
+              {chosenForma !== forma.id && (
+              <button type="button" className="identity-bloc-text forma-plus-text" value={forma.id} onClick={openForma}>{identity[language].read_more}...</button>
+              )}
+              {chosenForma === forma.id && (
+              <button type="button" className="identity-bloc-text forma-plus-text" value={forma.id} onClick={closeForma}>{identity[language].read_less}...</button>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+      {chosenForma !== 0 && (
+      <div className="identity-one one-forma-content">
+        <h3>{identity[language].formations[chosenForma - 1]?.title}</h3>
+        <div className="identity-one-content forma-content" dangerouslySetInnerHTML={createMarkup(identity[language].formations[chosenForma - 1]?.content)} />
+        <div className="what-I-learned">
+          <h4>{identity[language].what_I_learned}</h4>
+          <ul>
+            {identity[language].formations[chosenForma - 1]?.learned?.map((skill, index) => (
+              <li className="skill" key={index}>{skill}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      )}
+      <div className="experiences identity-bloc">
+        <h3>{identity[language].experience_title} :</h3>
+        <ul>
+          {identity[language].experiences?.map((expe) => (
+            <li className={chosenExpe !== expe.id ? 'identity-bloc-one one-expe' : 'identity-bloc-one one-expe close'} key={expe.id} id={`expe-${expe.id}`}>
+              <h4>{expe.title}</h4>
+              <h5>{expe.place}</h5>
+              <button
+                type="button"
+                className={chosenExpe !== expe.id ? 'identity-bloc-plus expe-plus' : 'identity-bloc-plus expe-plus close'}
+                value={expe.id}
+                onClick={(evt) => (
+                  chosenExpe !== expe.id ? openExpe(evt) : closeExpe()
+                )}
+              >+
+              </button>
+              {chosenExpe !== expe.id && (
+              <button type="button" className="identity-bloc-text expe-plus-text" value={expe.id} onClick={openExpe}>{identity[language].read_more}...</button>
+              )}
+              {chosenExpe === expe.id && (
+              <button type="button" className="identity-bloc-text expe-plus-text" value={expe.id} onClick={closeExpe}>{identity[language].read_less}...</button>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+      {chosenExpe !== 0 && (
+      <div className="identity-one one-expe-content">
+        <h3>{identity[language].experiences[chosenExpe - 1]?.title}</h3>
+        <h4>{identity[language].experiences[chosenExpe - 1]?.place}</h4>
+        <p>{identity[language].start_in} {dateFormat(identity[language].experiences[chosenExpe - 1]?.start, 'mmmm yyyy')} -&gt; {identity[language].end_in} {dateFormat(identity[language].experiences[chosenExpe - 1]?.end, 'mmmm yyyy')}</p>
+        <div className="identity-one-content expe-content" dangerouslySetInnerHTML={createMarkup(identity[language].experiences[chosenExpe - 1]?.content)} />
+        <div className="what-I-learned">
+          <h4>{identity[language].what_I_learned}</h4>
+          <ul>
+            {identity[language].experiences[chosenExpe - 1]?.learned?.map((skill, index) => (
+              <li className="skill" key={index}>{skill}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      )}
+      <div className="other-experiences identity-bloc">
+        <h3>{identity[language].other_experience_title} :</h3>
+        <ul>
+          {identity[language].other_experiences?.map((expe) => (
+            <li className={chosenOtherExpe !== expe.id ? 'identity-bloc-one one-expe' : 'identity-bloc-one one-expe close'} key={expe.id} id={`expe-${expe.id}`}>
+              <h4>{expe.title}</h4>
+              <button
+                type="button"
+                className={chosenOtherExpe !== expe.id ? 'identity-bloc-plus expe-plus' : 'identity-bloc-plus expe-plus close'}
+                value={expe.id}
+                onClick={(evt) => (
+                  chosenOtherExpe !== expe.id ? openOtherExpe(evt) : closeOtherExpe()
+                )}
+              >+
+              </button>
+              {chosenOtherExpe !== expe.id && (
+              <button type="button" className="identity-bloc-text expe-plus-text" value={expe.id} onClick={openOtherExpe}>{identity[language].read_more}...</button>
+              )}
+              {chosenOtherExpe === expe.id && (
+              <button type="button" className="identity-bloc-text expe-plus-text" value={expe.id} onClick={closeOtherExpe}>{identity[language].read_less}...</button>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+      {chosenOtherExpe !== 0 && (
+      <div className="identity-one one-other-expe-content">
+        <h3>{identity[language].other_experiences[chosenOtherExpe - 1]?.title}</h3>
+        <div className="identity-one-content other-expe-content" dangerouslySetInnerHTML={createMarkup(identity[language].other_experiences[chosenOtherExpe - 1]?.content)} />
+        <div className="what-I-learned">
+          <h4>{identity[language].what_I_learned}</h4>
+          <ul>
+            {identity[language].other_experiences[chosenOtherExpe - 1]?.learned?.map((skill, index) => (
+              <li className="skill" key={index}>{skill}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      )}
     </div>
   );
 };

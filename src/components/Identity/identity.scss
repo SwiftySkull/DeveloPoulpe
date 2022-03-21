@@ -10,26 +10,39 @@
       background-color: vars.$mainColor;
       border-radius: 5px;
       padding: 2px;
+      width: 50px;
 
       &.first-identity {
         transform: scaleX(-1);
+      }
+
+      @media (min-width: vars.$medium) {
+        width: unset;
       }
     }
     
 
     h2 {
       font-family: vars.$syncopate;
-      font-size: 1.8rem;
+      font-size: 1.3rem;
       align-self: center;
       margin: 0 1rem;
+
+      @media (min-width: vars.$medium) {
+        font-size: 1.8rem;
+      }
     }
   }
 
   .profile-picture {
     margin: 0 auto 2rem;
-    height: 300px;
+    height: 230px;
     text-align: center;
 
+    @media (min-width: vars.$medium) {
+      height: 300px;
+    }
+  
     img {
       height: 100%;
     }
@@ -39,448 +52,278 @@
     width: 85%;
     margin: 0 auto;
     line-height: 1.8rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+
+    @media (min-width: vars.$medium) {
+      font-size: 1.2rem;
+    }
 
     >p {
       strong {
         font-family: vars.$syncopate;
       }
     }
+  }
 
-    .description {
-      margin: 2rem 0 3rem;
-      
-      h3 {
-        font-family: vars.$syncopate;
-        margin-bottom: 1rem;
+  .description {
+    width: 85%;
+    line-height: 2rem;
+    font-size: 1.1rem;
+    margin: 2rem auto 3rem;
+    
+    @media (min-width: vars.$medium) {
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+    }
+
+    h3 {
+      font-family: vars.$syncopate;
+      margin-bottom: 1rem;
+    }
+    
+    .bio {
+      strong {
+        font-weight: bold;
       }
-      
-      .bio {
-        strong {
+
+      em {
+        font-style: italic;
+      }
+
+      a {
+        text-decoration: underline;
+
+        &:hover, &:focus {
+          color: vars.$mainColor
+        }
+      }
+
+      ul {
+        margin-left: 1.5rem;
+        list-style-type: disc;
+
+        @media (min-width: vars.$medium) {
+          margin-left: 3rem;
+        }
+      }
+    }
+  }
+
+  .identity-bloc {
+    width: 85%;
+    margin: 0 auto;
+    line-height: 2rem;
+    font-size: 1.1rem;
+
+    @media (min-width: vars.$medium) {
+      line-height: 1.8rem;
+      font-size: 1.2rem;
+    }
+
+    h3 {
+      margin: 2rem 0 1rem;
+      font-family: vars.$syncopate;
+    }
+
+    ul {
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .identity-bloc-one {
+        border-radius: 5px;
+        background: vars.$secondColor;
+        width: 90%;
+        min-height: 100px;
+        padding: 5px;
+        position: relative;
+        margin: 0 auto 3rem;
+
+        @media (min-width: vars.$medium) {
+          width: 300px;
+        }
+
+        &.close {
+          border: 5px solid vars.$mainColor;
+          padding: 0;
+        }
+
+        .identity-bloc-plus {
+          position: absolute;
+          right: 10px;
+          bottom: 5px;
+          background-color: white;
+          border: unset;
+          color: black;
           font-weight: bold;
+          font-size: 1.8rem;
+          border-radius: 100%;
+          width: 1.5rem;
+          height: 1.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        
+          &:hover, &:focus {
+            background: vars.$mainColor;
+            cursor: pointer;
+          }
+
+          &:active {
+            color: white;
+          }
+
+          &.close {
+            transform: rotate(45deg);
+            background-color: vars.$mainColor;
+
+            &:hover, &:focus {
+              background: white;
+              cursor: pointer;
+            }
+
+            &:active {
+              color: vars.$mainColor;
+            }
+          }
         }
 
-        em {
-          font-style: italic;
-        }
-
-        a {
-          text-decoration: underline;
+        .identity-bloc-text {
+          border: unset;
+          background: unset;
+          position: absolute;
+          right: -5px;
+          color: white;
+          font-size: 1rem;
+          bottom: -30px;
 
           &:hover, &:focus {
-            color: vars.$mainColor
-          }
-        }
-
-        ul {
-          margin-left: 3rem;
-          list-style-type: disc;
-        }
-      }
-    }
-
-    .formation {
-
-      h3 {
-        margin: 2rem 0 1rem;
-        font-family: vars.$syncopate;
-      }
-
-      ul {
-        margin-bottom: 3rem;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        
-        .one-forma {  
-          border-radius: 5px;
-          background: vars.$secondColor;
-          width: 300px;
-          min-height: 70px;
-          height: 100px;
-          padding: 5px;
-          position: relative;
-          margin-bottom: 3rem;
-
-          &.close {
-            border: 5px solid vars.$mainColor;
-            padding: 0;
-          }
-        
-          .forma-plus {
-            position: absolute;
-            right: 10px;
-            bottom: 5px;
-            background-color: white;
-            border: unset;
-            color: black;
-            font-weight: bold;
-            font-size: 1.8rem;
-            border-radius: 100%;
-            width: 1.5rem;
-            height: 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            &:hover, &:focus {
-              background: vars.$mainColor;
-              cursor: pointer;
-            }
-
-            &:active {
-              color: white;
-            }
-
-            &.close {
-              transform: rotate(45deg);
-              background-color: vars.$mainColor;
-
-              &:hover, &:focus {
-                background: white;
-                cursor: pointer;
-              }
-  
-              &:active {
-                color: vars.$mainColor;
-              }
-            }
+            text-decoration: underline;
+            cursor: pointer;
           }
 
-          .forma-plus-text {
-            border: unset;
-            background: unset;
-            position: absolute;
-            right: -5px;
-            bottom: -26px;
-            color: white;
-            font-size: 1rem;
-
-            &:hover, &:focus {
-              text-decoration: underline;
-              cursor: pointer;
-            }
-
-            &:active {
-              color: vars.$mainColor;
-            }
-          }
+          &:active {
+            color: vars.$mainColor;
+          }  
         }
       }
     }
+  }
 
-    .one-forma-content {
-      margin-top: 4rem;
-      margin-bottom: 3rem;
+  .identity-one {
+    width: 85%;
+    margin: 3rem auto 3rem;
+    line-height: 2rem;
+    font-size: 1.1rem;
 
-      &.close {
-        display: none;
-      }
+    @media (min-width: vars.$medium) {
+      line-height: 1.8rem;
+      font-size: 1.2rem;
+      margin: 4rem auto 3rem;
+    }
 
-      h3 {
-        font-family: vars.$syncopate;
-        text-align: center;
-        font-size: 1.5rem;
+    &.close {
+      display: none;
+    }
+
+    h3 {
+      font-family: vars.$syncopate;
+      text-align: center;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+
+      @media (min-width: vars.$medium) {
         margin-bottom: 1rem;
-      }
-
-      .forma-content {
-        line-height: 2rem;
-
-        strong {
-          font-weight: bold;
-        }
-
-        ul {
-          margin: 1rem 0 1rem 3rem;
-          list-style-type: disc;
-        }
-
-        img {
-          border-radius: 12px;
-        }
-      }
-
-      .what-I-learned {
-        margin: 3rem 0 2rem;
-
-        h4 {
-          font-family: vars.$syncopate;
-          margin-bottom: 1rem;
-        }
-
-        ul {
-          margin-left: 3rem;
-          list-style: disc;
-          line-height: 2rem;
-        }
+        font-size: 1.5rem;
       }
     }
 
-    .experiences {
+    .identity-one-content {
+      line-height: 2rem;
 
-      h3 {
-        margin: 2rem 0 1rem;
-        font-family: vars.$syncopate;
-      }
-
-      ul {
-        margin-bottom: 3rem;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-        .one-expe {  
-          border-radius: 5px;
-          background: vars.$secondColor;
-          width: 300px;
-          min-height: 70px;
-          height: 145px;
-          padding: 5px;
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          margin-bottom: 3rem;
-
-          &.close {
-            border: 5px solid vars.$mainColor;
-            padding: 0;
-          }
-
-          h4 {
-            margin-bottom: 1rem;
-          }
-    
-          h5 {
-            text-align: right;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: black;
-            margin-bottom: 2rem;
-          }
-
-          .expe-plus {
-            position: absolute;
-            right: 10px;
-            bottom: 5px;
-            background-color: white;
-            border: unset;
-            color: black;
-            font-weight: bold;
-            font-size: 1.8rem;
-            border-radius: 100%;
-            width: 1.5rem;
-            height: 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            &:hover, &:focus {
-              background: vars.$mainColor;
-              cursor: pointer;
-            }
-
-            &:active {
-              color: white;
-            }
-
-            &.close {
-              transform: rotate(45deg);
-              background-color: vars.$mainColor;
-
-              &:hover, &:focus {
-                background: white;
-                cursor: pointer;
-              }
-  
-              &:active {
-                color: vars.$mainColor;
-              }
-            }
-          }
-
-          .expe-plus-text {
-            border: unset;
-            background: unset;
-            position: absolute;
-            right: -5px;
-            bottom: -30px;
-            color: white;
-            font-size: 1rem;
-
-            &:hover, &:focus {
-              text-decoration: underline;
-              cursor: pointer;
-            }
-
-            &:active {
-              color: vars.$mainColor;
-            }
-          }
-        }
-      }
-    }
-
-    .one-expe-content {
-      margin-top: 4rem;
-      margin-bottom: 3rem;
-
-      &.close {
-        display: none;
-      }
-
-      h3 {
-        font-family: vars.$syncopate;
-        text-align: center;
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-      }
-
-      >h4 {
-        font-size: 1.5rem;
-        text-align: center;
+      strong {
         font-weight: bold;
-        margin-bottom: 1rem;
       }
 
-      .expe-content {
-        margin-top: 2rem;
-        line-height: 2rem;
+      ul {
+        margin: 1rem 0 1rem 1.5rem;
+        list-style-type: disc;
 
-        strong {
-          font-weight: bold;
-        }
-
-        ul {
+        @media (min-width: vars.$medium) {
           margin: 1rem 0 1rem 3rem;
-          list-style-type: disc;
-        }
-
-        img {
-          border-radius: 12px;
-        }
-      }
-
-      .what-I-learned {
-        margin: 3rem 0 2rem;
-
-        h4 {
-          font-family: vars.$syncopate;
-          margin-bottom: 1rem;
-        }
-
-        ul {
-          margin-left: 3rem;
-          list-style: disc;
-          line-height: 2rem;
         }
       }
     }
 
-    .other-experiences {
+    .what-I-learned {
+      margin: 3rem 0 2rem;
 
-      h3 {
-        margin: 2rem 0 1rem;
+      h4 {
         font-family: vars.$syncopate;
+        margin-bottom: 1rem;
       }
 
       ul {
-        margin-bottom: 3rem;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        margin-left: 1.5rem;
+        list-style: disc;
+        line-height: 2rem;
 
-        .one-expe {  
-          border-radius: 5px;
-          background: vars.$secondColor;
-          width: 300px;
-          min-height: 70px;
-          height: 100px;
-          padding: 5px;
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          margin-bottom: 3rem;
-
-          &.close {
-            border: 5px solid vars.$mainColor;
-            padding: 0;
-          }
-
-          h4 {
-            margin-bottom: 1rem;
-          }
-    
-          h5 {
-            text-align: right;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: black;
-            margin-bottom: 2rem;
-          }
-
-          .expe-plus {
-            position: absolute;
-            right: 10px;
-            bottom: 5px;
-            background-color: white;
-            border: unset;
-            color: black;
-            font-weight: bold;
-            font-size: 1.8rem;
-            border-radius: 100%;
-            width: 1.5rem;
-            height: 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            &:hover, &:focus {
-              background: vars.$mainColor;
-              cursor: pointer;
-            }
-
-            &:active {
-              color: white;
-            }
-
-            &.close {
-              transform: rotate(45deg);
-              background-color: vars.$mainColor;
-
-              &:hover, &:focus {
-                background: white;
-                cursor: pointer;
-              }
-  
-              &:active {
-                color: vars.$mainColor;
-              }
-            }
-          }
-
-          .expe-plus-text {
-            border: unset;
-            background: unset;
-            position: absolute;
-            right: -5px;
-            bottom: -30px;
-            color: white;
-            font-size: 1rem;
-
-            &:hover, &:focus {
-              text-decoration: underline;
-              cursor: pointer;
-            }
-
-            &:active {
-              color: vars.$mainColor;
-            }
-          }
+        @media (min-width: vars.$medium) {
+          margin-left: 3rem;
         }
       }
+    }
+  }
+
+  .one-forma-content {
+    .forma-content {
+      img {
+        border-radius: 12px;
+      }
+    }
+  }
+
+  .experiences {
+    ul {
+      .one-expe {  
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 145px;
+
+        h4 {
+          margin-bottom: 1rem;
+        }
+  
+        h5 {
+          text-align: right;
+          font-size: 1.1rem;
+          font-weight: bold;
+          color: black;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+
+  .one-expe-content {
+    h3 {
+      font-family: vars.$syncopate;
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    >h4 {
+      font-size: 1.5rem;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .expe-content {
+      margin-top: 2rem;
     }
   }
 }
