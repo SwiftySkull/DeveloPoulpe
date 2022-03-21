@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { closeForma, closeExpe } from 'src/actions/identityActions';
+import { closeForma, closeExpe, closeOtherExpe } from 'src/actions/identityActions';
 
 import Footer from 'src/components/Footer';
 
@@ -20,6 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
   closePresentation: () => {
     dispatch(closeForma());
     dispatch(closeExpe());
+    dispatch(closeOtherExpe());
   },
 });
 

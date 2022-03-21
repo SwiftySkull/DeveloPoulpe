@@ -3,11 +3,14 @@ import {
   CLOSE_FORMA,
   OPEN_EXPE,
   CLOSE_EXPE,
+  OPEN_OTHER_EXPE,
+  CLOSE_OTHER_EXPE,
 } from 'src/actions/identityActions';
 
 const initialState = {
   chosenForma: 0,
   chosenExpe: 0,
+  chosenOtherExpe: 0,
 };
 
 /**
@@ -15,6 +18,20 @@ const initialState = {
  */
 function identityReducer(state = initialState, action) {
   switch (action.type) {
+    /** Open an experience's informations with it's ID */
+    case OPEN_OTHER_EXPE:
+      return {
+        ...state,
+        chosenOtherExpe: action.otherExpeId,
+      };
+
+    /** Close an experience's informations */
+    case CLOSE_OTHER_EXPE:
+      return {
+        ...state,
+        chosenOtherExpe: 0,
+      };
+
     /** Open an experience's informations with it's ID */
     case OPEN_EXPE:
       return {

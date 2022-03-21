@@ -12,6 +12,7 @@ export default {
     what_I_learned: 'Connaissances et compétences acquises',
     start_in: 'Début en',
     end_in: 'Fin en',
+    bio: '<p>Je suis un jeune développeur web Breton.</p><br><p><strong>Gameur</strong> depuis petit, fan de tout ce qui touche à la <strong>culture japonaise</strong> et à l\'univers des <strong>manga</strong> et amateur de <strong>nouvelles technologies</strong>, j\'ai mis du temps à essayer de travailler dans un milieu virtuel mais j\'ai finis par le décidé de me lancer et ça va donc faire aujourd\'hui XXX jours que je travaille dans cet univers.</p><br><p>En dehors du monde virtuel j\'aime <strong>conduire pour le loisir</strong>, faire des balades en voiture ou traverser la France à tout moment de la journée pour voir des amis aux 4 coins du pays.</p><p>Sur mes temps libres et avec de la motivation je passe un peu de temps en <strong>salle de sport</strong> pour entretir mon corps en dehors du temps de travail et prévenir des troubles musculaires ou même la diminution des capacités cardiovasculaires.</p><p>Je me suis aussi mis à la photographie pour des projets personnels et il peut m\'arriver de dessiner sur tablette graphique quand l\'inspiration se présente.</p><br><p>Le design de mon avatar <em>(merci à <a href="https://www.instagram.com/anachanlagamine/">AnaChan LaGamine</a>)</em> est un mélange de plusieurs éléments qui me correspondent :</p><ul><li>La <strong>corne de licorne</strong> fait référence à la <strong>part d\'enfant en moi</strong>, les rêves mais aussi l\'attrait pour la fiction et par la même occasion l\'univers des mangas,</li><li>Le <strong>masque de docteur de la peste</strong> fait référence à un jeu vidéo de survie et à ma <strong>passion pour les jeux vidéos</strong>,</li><li>Les <strong>tentacules</strong> représentent ma <strong>capacité multitâche</strong>, spécialement dans le code à être capable de m\'adapter, effectuer plusieurs tâches en même temps mais aussi me fondre dans mon environnement.</li></ul><br><p>Le surnom <strong>Poulpy</strong> vient justement de ma formation pendant laquelle je me suis plusieurs retrouvé à suivre les cours, coder, prendre des notes complètes que je partageais ensuite à ma promo, mais aussi aider mes collègues dans leur code tout en faisant mes propres exercices, ils savaient que j\'étais sur tous les fronts et prêt à les aider en cas de besoin. Parfois même on me surnommait le <strong>Kraken</strong> pour appuyer ma capacité à les aider et à coder.</p><br><p>Le surnom <strong>Swifty</strong> est plus ancien, il correspond à mon <strong>"alter ego virtuel"</strong>, il représente ma place dans le monde virtuel. Que ce soit sur les réseaux sociaux, dans des conventions ou même dans les jeux vidéos, il représente cette facette virtuelle de ma personnalité.</p>',
     formations: [
       {
         id: 1,
@@ -46,6 +47,7 @@ export default {
         ],
       },
     ],
+    experience_title: 'Expériences profesionnelles',
     experiences: [
       {
         id: 1,
@@ -103,6 +105,35 @@ export default {
         ],
       },
     ],
+    other_experience_title: 'Expériences autres',
+    other_experiences: [
+      {
+        id: 1,
+        title: 'Staff en convention',
+        content: '<p>Il m\'est arrivé d\'être staff bénévole pour des conventions, notamment le <strong>Japan Tours Festival</strong> en m\'occupant de la partie restauration pour les invités et le staff, c\'est à dire préparer une double salle pour accueillir les personnes sur la pause déjeuner, et s\'occuper du service en buffet libre, tout en faisant attention à prendre en compte les particularités alimentaires de certaines personnes.</p><p>Mon rôle était donc de superviser une équipe de 5 personnes réparties sur deux salles en veillant à ce que rien ne manque niveau nourriture et boisson, que les membres de l\'équipe soient en forme et enfin gérer le rangement et la préparation des salles pour le lendemain pendant 3 jours.</p>',
+        learned: [
+          'Gestion d\'une équipe',
+          'Gestion de salle style cantine',
+        ],
+      },
+      {
+        id: 2,
+        title: 'Comédien/Doublage',
+        content: '<p>J\'ai eu la possibilité d\'assister au doublage de voix française de films/séries, j\'ai eu la chance même de pouvoir le faire moi-même.</p><p>A côté de ça j\'ai aussi suivi une courte formation de deux mois aux Cours Florent à Paris.</p>',
+        learned: [
+          'Imprégnation d\'un personnage',
+          'Improvisation',
+        ],
+      },
+      {
+        id: 3,
+        title: 'Ostréiculture',
+        content: '<p>Vivant en Bretagne près de la mer, j\'ai eu la possibilité pendant des vacances d\'été de trouver un emploi saisonnier dans l\'ostréiculture, cela consistait simplement à aller sur des parcs à huitres au large et gérer les poches d\'huitres, que ce soit dans leur pose, leur collecte ou leur nettoyage des parasites.</p>',
+        learned: [
+          'Manutention',
+        ],
+      },
+    ],
   },
   en: {
     title: 'Who am I ?',
@@ -115,6 +146,7 @@ export default {
     what_I_learned: 'Knowledge and skills acquired',
     start_in: 'Starts in',
     end_in: 'Ends in',
+    bio: '<p>I am a young Breton web developer.</p><br><p><strong>Gamer</strong> since I\'m a kid, fan of everything related to <strong>Japanese culture</strong> and <strong>manga</strong> universe and lover of <strong>new technologies</strong>, it took me some time to try to work in the virtual universe but I finally decided to give this a shot and now it\'s been XXX days I am working in this universe.</p><br><p>Besides the virtual world, I love <strong>driving for pleasure</strong>, going on a car ride or cross the whole France at anytime to see friends to the 4 corners of the country.</p><p>During my free time and with some motivation I spend some time at the <strong>gym</strong> to maintain my body when I\'m not working and prevent it from muscle disorder or reduced cardiovascular capacity.</p><p>I also started photography for personnal projects, and sometimes I can draw on graphic tablet when I have some inspiration.</p><br><p>My avatar\'s design <em>(Thanks to <a href="https://www.instagram.com/anachanlagamine/">AnaChan LaGamine</a>)</em> is a mix from several elements that suit me :</p><ul><li>The <strong>unicorn horn</strong> refers to my <strong>child part</strong>, the dreams but also my interest for fiction and manga universe at the same time,</li><li>The <strong>Plague Mask</strong> refers to a survival video game and my <strong>passion for video games</strong>,</li><li>the <strong>tentacles</strong> represent ma <strong>multitask skill</strong>, especially in code being able to adapt, doing several tasks at the same time but also blend into my environment.</li></ul><br><p>The nickname <strong>Poulpy<strong> comes from my Web Development classes during which I found myself many times listening to the class, coding, taking notes that I would share to everyone at the end of the day, helping colleagues with their code and doing my own exercises, they knew I was on all fronts and ready to help them when needed. Sometimes they even called me the <strong>Kraken</strong> to support my ability to code and help them.</p><br><p>My nickname <strong>Swifty</strong> is older and refers to my <strong>"virtual alter ego</strong>, it represents my place in the virtual world. As on social media, conventions or online games, it represents this virtual aspect of my personnality.</p>',
     formations: [
       {
         id: 1,
@@ -149,6 +181,7 @@ export default {
         ],
       },
     ],
+    experience_title: 'Professionnal experiences',
     experiences: [
       {
         id: 1,
@@ -203,6 +236,35 @@ export default {
           'Assigned role of Lead Dev Front',
           'Organization + management of the work of 2 colleagues',
           'Project management <ith GitHub/Trello/Google Drive',
+        ],
+      },
+    ],
+    other_experience_title: 'Other experiences',
+    other_experiences: [
+      {
+        id: 1,
+        title: 'Staff member in convention',
+        content: '<p>I happened to be voluntary staff member in conventions, especially the <strong>Japan Tours Festival</strong> handling the catering area for the guests and the other staff members, that means preparing a double catering room to welcome people on the lunch break, taking care of the buffet service, while paying attention to the food specifity of everyone.</p><p>My job consisted in supervising a five members team split up in two rooms watching that no food or drink is missing and the teammates feel all good, and the cleaning and preparing again the both rooms for the next day during 3 days.</p>',
+        learned: [
+          'Team Management',
+          'Canteen management',
+        ],
+      },
+      {
+        id: 2,
+        title: 'Actor/Voice Dubbing',
+        content: '<p>I had the opportunity to assist to french voice dubbing of movies and series, I even had the chance to do it myself.</p><p>Besides this I also followed a short comedy formation of two months at the Cours Florent in Paris.</p>',
+        learned: [
+          'Impregnation of a character',
+          'Improvisation',
+        ],
+      },
+      {
+        id: 3,
+        title: 'Oyster Farming',
+        content: '<p>Living in Britain next to the sea I had the opportunity to find a seasonal employment in oyster farming, it simply consisted in going on the oyster farms in the sea and handling oysters bags, installing them, collecting them or cleaning them from parasites.</p>',
+        learned: [
+          'Handling work',
         ],
       },
     ],

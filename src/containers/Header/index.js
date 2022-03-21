@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Cookies from 'universal-cookie';
 
-import { closeForma, closeExpe } from 'src/actions/identityActions';
+import { closeForma, closeExpe, closeOtherExpe } from 'src/actions/identityActions';
 
 import { changeLanguage } from 'src/actions/mainActions';
 
@@ -34,6 +34,7 @@ const mapDispatchToProps = (dispatch) => ({
   closePresentation: () => {
     dispatch(closeForma());
     dispatch(closeExpe());
+    dispatch(closeOtherExpe());
   },
 });
 

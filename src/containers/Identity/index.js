@@ -5,6 +5,8 @@ import {
   closeForma,
   openExpe,
   closeExpe,
+  openOtherExpe,
+  closeOtherExpe,
 } from 'src/actions/identityActions';
 
 import Identity from 'src/components/Identity';
@@ -18,6 +20,7 @@ const mapStateToProps = (state) => ({
   cookieStatus: state.main.cookieStatus,
   chosenForma: Number(state.identity.chosenForma),
   chosenExpe: Number(state.identity.chosenExpe),
+  chosenOtherExpe: Number(state.identity.chosenOtherExpe),
 });
 
 /**
@@ -42,6 +45,16 @@ const mapDispatchToProps = (dispatch) => ({
   /** Close an experience's informations */
   closeExpe: () => {
     dispatch(closeExpe());
+  },
+
+  /** Open an other experience's informations with it's ID */
+  openOtherExpe: (evt) => {
+    dispatch(openOtherExpe(evt.target.value));
+  },
+
+  /** Close an other experience's informations */
+  closeOtherExpe: () => {
+    dispatch(closeOtherExpe());
   },
 });
 

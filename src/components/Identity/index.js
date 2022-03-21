@@ -29,6 +29,9 @@ import { identityUrl } from 'src/data/urls';
  * @param {number} chosenExpe ID of the experience chosen to see details
  * @param {function} openExpe Open a experience informations
  * @param {function} closeExpe Close a experience informations
+ * @param {number} chosenOtherExpe ID of the other experience chosen to see details
+ * @param {function} openOtherExpe Open a other experience informations
+ * @param {function} closeOtherExpe Close a other experience informations
  */
 const Identity = ({
   language,
@@ -39,6 +42,9 @@ const Identity = ({
   chosenExpe,
   openExpe,
   closeExpe,
+  chosenOtherExpe,
+  openOtherExpe,
+  closeOtherExpe,
 }) => {
   const cookies = new Cookies();
 
@@ -129,9 +135,7 @@ const Identity = ({
         <p><strong>{identity[language].home}</strong> : Saint-Brieuc</p>
         <div className="description">
           <h3>Description :</h3>
-          <p>
-            Jeune développeur web
-          </p>
+          <div className="bio" dangerouslySetInnerHTML={createMarkup(identity[language].bio)} />
         </div>
         <div className="formation">
           <h3>Formations :</h3>
@@ -173,7 +177,7 @@ const Identity = ({
           </div>
         )}
         <div className="experiences">
-          <h3>Experiences professionnelles :</h3>
+          <h3>{identity[language].experience_title} :</h3>
           <ul>
             {identity[language].experiences?.map((expe) => (
               <li className={chosenExpe !== expe.id ? 'one-expe' : 'one-expe close'} key={expe.id} id={`expe-${expe.id}`}>
@@ -214,6 +218,45 @@ const Identity = ({
             </div>
           </div>
         )}
+        <div className="other-experiences">
+          <h3>{identity[language].other_experience_title} :</h3>
+          <ul>
+            {identity[language].other_experiences?.map((expe) => (
+              <li className={chosenOtherExpe !== expe.id ? 'one-expe' : 'one-expe close'} key={expe.id} id={`expe-${expe.id}`}>
+                <h4>{expe.title}</h4>
+                <button
+                  type="button"
+                  className={chosenOtherExpe !== expe.id ? 'expe-plus' : 'expe-plus close'}
+                  value={expe.id}
+                  onClick={(evt) => (
+                    chosenOtherExpe !== expe.id ? openOtherExpe(evt) : closeOtherExpe()
+                  )}
+                >+
+                </button>
+                {chosenOtherExpe !== expe.id && (
+                  <button type="button" className="expe-plus-text" value={expe.id} onClick={openOtherExpe}>{identity[language].read_more}...</button>
+                )}
+                {chosenOtherExpe === expe.id && (
+                  <button type="button" className="expe-plus-text" value={expe.id} onClick={closeOtherExpe}>{identity[language].read_less}...</button>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+        {chosenOtherExpe !== 0 && (
+          <div className="one-expe-content">
+            <h3>{identity[language].other_experiences[chosenOtherExpe - 1]?.title}</h3>
+            <div className="expe-content" dangerouslySetInnerHTML={createMarkup(identity[language].other_experiences[chosenOtherExpe - 1]?.content)} />
+            <div className="what-I-learned">
+              <h4>{identity[language].what_I_learned}</h4>
+              <ul>
+                {identity[language].other_experiences[chosenOtherExpe - 1]?.learned?.map((skill, index) => (
+                  <li className="skill" key={index}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -239,6 +282,13 @@ Identity.propTypes = {
   /** Open/close the informations of an experience */
   openExpe: PropTypes.func.isRequired,
   closeExpe: PropTypes.func.isRequired,
+
+  /** ID of the other experience chosen to see details */
+  chosenOtherExpe: PropTypes.number.isRequired,
+
+  /** Open/close the informations of an other experience */
+  openOtherExpe: PropTypes.func.isRequired,
+  closeOtherExpe: PropTypes.func.isRequired,
 };
 
 Identity.defaultProps = {
