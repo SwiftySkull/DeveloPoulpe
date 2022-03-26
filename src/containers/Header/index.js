@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Cookies from 'universal-cookie';
 
 import { closeForma, closeExpe, closeOtherExpe } from 'src/actions/identityActions';
-
+import { displayWebsiteInfos } from 'src/actions/projectsActions';
 import { changeLanguage, changeMenu } from 'src/actions/mainActions';
 
 import Header from 'src/components/Header';
@@ -37,6 +37,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(closeExpe());
     dispatch(closeOtherExpe());
     dispatch(changeMenu(false));
+    dispatch(displayWebsiteInfos(0));
   },
 
   /** Open/Close the menu */

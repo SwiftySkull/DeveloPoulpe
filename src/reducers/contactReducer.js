@@ -21,7 +21,7 @@ const initialState = {
 };
 
 /**
- * Reducer for the main events.
+ * Reducer for the contact events.
  */
 function contactReducer(state = initialState, action) {
   switch (action.type) {

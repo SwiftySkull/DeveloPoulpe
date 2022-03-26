@@ -52,4 +52,6 @@ export const contactValidator = (name, email, tel, subject, message) => {
   return sendRequest;
 };
 
-export const yyy = 2;
+export function createMarkup(text) {
+  return { __html: text };
+}

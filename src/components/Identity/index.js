@@ -21,6 +21,7 @@ import facebook from 'src/data/facebook';
 import './identity.scss';
 
 import { identityUrl } from 'src/data/urls';
+import { createMarkup } from 'src/utils';
 
 // == Composant
 /**
@@ -62,10 +63,6 @@ const Identity = ({
       cookies.remove('url');
     }
   }, []);
-
-  function createMarkup(text) {
-    return { __html: text };
-  }
 
   i18n.monthNames = [
     'Jan',

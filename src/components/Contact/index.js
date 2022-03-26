@@ -65,7 +65,7 @@ const Contact = ({
 
   return (
     <div id="contact">
-      <h1>{contact[language].title}</h1>
+      <h2>{contact[language].title}</h2>
       <div className="contact-content">
         <p>{contact[language].p1}</p>
         <p>{contact[language].p2} <a href="mailto:aurelien.beneyton@developoulpe.fr">aurelien.beneyton@developoulpe.fr</a>.</p>
