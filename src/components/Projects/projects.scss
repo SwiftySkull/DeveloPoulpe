@@ -218,6 +218,7 @@
         font-size: 2rem;
         font-family: vars.$syncopate;
         margin-bottom: 1rem;
+        padding: 0 5%;
       }
 
       .redirect {
@@ -247,11 +248,16 @@
       >p {
         text-align: center;
         margin-bottom: 2rem;
+        padding: 0 5%;
       }
 
       .modal-text {
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
+
+        @media (min-width: vars.$medium) {
+          width: 80%;
+        }
 
         p {
           line-height: 1.5rem;
@@ -266,6 +272,13 @@
             border-bottom: 2px solid vars.$secondColor;
             margin-bottom: 1rem;
             padding-bottom: 1rem;
+          }
+
+          &.trad {
+            color: red;
+            text-align: center;
+            font-size: 2rem;
+            margin: 2rem;
           }
         }
       }
