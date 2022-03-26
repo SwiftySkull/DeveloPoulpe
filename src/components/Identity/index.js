@@ -267,10 +267,10 @@ const Identity = ({
         <h3>{language === 'fr' ? 'Réseaux sociaux :' : 'Social Networks :'}</h3>
         <div className="social-links">
           <a href="https://www.linkedin.com/in/aurelien-b/" target="_blank" rel="noreferrer noopener"><img src={linkedin} alt="" /><p>Aurelien Beneyton</p></a>
-          <a href="https://github.com/SwiftySkull" target="_blank" rel="noreferrer noopener"><img src={github} alt="" /><p>SwiftySkull</p></a>
-          <a href="https://discord.gg/PexTDZgGmD" target="_blank" rel="noreferrer noopener"><img src={discord} alt="" /><p>SwiftySkull#2054</p></a>
           <a href="https://www.instagram.com/swiftyskull/" target="_blank" rel="noreferrer noopener"><img src={instagram} alt="" /><p>SwiftySkull</p></a>
+          <a href="https://github.com/SwiftySkull" target="_blank" rel="noreferrer noopener"><img src={github} alt="" /><p>SwiftySkull</p></a>
           <a href="https://www.facebook.com/Swift741" target="_blank" rel="noreferrer noopener"><img src={facebook} alt="" /><p>Swift741</p></a>
+          <a href="https://discord.gg/PexTDZgGmD" target="_blank" rel="noreferrer noopener"><img src={discord} alt="" /><p>SwiftySkull#2054</p></a>
         </div>
       </div>
     </div>
