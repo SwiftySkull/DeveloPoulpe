@@ -55,3 +55,17 @@ export const contactValidator = (name, email, tel, subject, message) => {
 export function createMarkup(text) {
   return { __html: text };
 }
+
+/**
+ * Gives the number of days from a specific date until now
+ *
+ * @param {string} date The date of the first day
+ * @returns Number of days from the date to now
+ */
+export function dateFromStart(date) {
+  const today = Date.now();
+  const startDev = Date.parse(date);
+  const total = (today - startDev) / 86400000; // 1000 / 60 / 60 / 24
+
+  return Math.trunc(total);
+}

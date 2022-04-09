@@ -6,6 +6,9 @@ import Cookies from 'universal-cookie';
 
 // == Import
 import home from 'src/data/Languages-files/home';
+import UnderConstruction from 'src/components/UnderConstruction';
+
+import homePoulpe from 'src/assets/images/home-poulpe.jpg';
 
 import './home.scss';
 
@@ -37,7 +40,22 @@ const Home = ({
 
   return (
     <div id="home">
-      <p>{home[language].title}</p>
+      <h2>{home[language].title1}</h2>
+      <h2>{home[language].title2}</h2>
+      <div className="home-page">
+        <div className="home-poulpe">
+          <img className="home-poulpe-img" src={homePoulpe} alt="Home Poulpe" />
+        </div>
+        <div className="home-introduction">
+          <p>Développeur Web FullStack sensible à l'accessibilité.</p>
+          <p>Je construit des sites uniques entièrement à la main.</p>
+          <p>Je peux aussi remettre à neuf un site et le mettre à jour.</p>
+          <p>Photographe amateur je peux me déplacer pour rendre un projet encore plus unique.</p>
+        </div>
+      </div>
+      <div style={{ position: 'relative', width: '100%', height: '300px' }}>
+        <UnderConstruction />
+      </div>
     </div>
   );
 };
