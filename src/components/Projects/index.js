@@ -20,16 +20,21 @@ import { createMarkup } from 'src/utils';
  * @param {boolean} cookieStatus Boolean to determine if cookies are accepted or not
  * @param {function} displayWebsiteInfos Display an information page about the website
  * @param {number} displayedWebsite Id number of the displayed website, none if 0
+ * @param {func} hideTopButton Hide the Back-to-top button
  */
 const Projects = ({
   language,
   cookieStatus,
   displayWebsiteInfos,
   displayedWebsite,
+  hideTopButton,
 }) => {
   const cookies = new Cookies();
 
   useEffect(() => {
+    window.scroll(0, 0);
+    hideTopButton();
+
     if (cookieStatus || cookies.get('cookies-accept') === 'true') {
       cookies.set('url', projectUrl, '/');
     }
@@ -88,6 +93,9 @@ Projects.propTypes = {
 
   /** Id nnumber of the displayed website */
   displayedWebsite: PropTypes.number.isRequired,
+
+  /** Hide the Back-to-top button */
+  hideTopButton: PropTypes.func.isRequired,
 };
 
 Projects.defaultProps = {

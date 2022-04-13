@@ -3,6 +3,8 @@ import {
   ACCEPT_COOKIES,
   REFUSE_COOKIE,
   CHANGE_MENU,
+  DISPLAY_TOP_BUTTON,
+  HIDE_TOP_BUTTON,
 } from 'src/actions/mainActions';
 
 const initialState = {
@@ -10,6 +12,7 @@ const initialState = {
   cookieBox: false,
   cookieStatus: false,
   menuStatus: false,
+  backToTopButton: false,
 };
 
 /**
@@ -17,6 +20,20 @@ const initialState = {
  */
 function mainReducer(state = initialState, action) {
   switch (action.type) {
+    /** Display the back-to-top button */
+    case DISPLAY_TOP_BUTTON:
+      return {
+        ...state,
+        backToTopButton: true,
+      };
+
+    /** Hide the back-to-top button */
+    case HIDE_TOP_BUTTON:
+      return {
+        ...state,
+        backToTopButton: false,
+      };
+
     /** Open/Close the menu */
     case CHANGE_MENU:
       return {

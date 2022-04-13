@@ -38,6 +38,7 @@ import { createMarkup } from 'src/utils';
  * @param {number} chosenOtherExpe ID of the other experience chosen to see details
  * @param {function} openOtherExpe Open a other experience informations
  * @param {function} closeOtherExpe Close a other experience informations
+ * @param {func} hideTopButton Hide the Back-to-top button
  */
 const Identity = ({
   language,
@@ -51,10 +52,14 @@ const Identity = ({
   chosenOtherExpe,
   openOtherExpe,
   closeOtherExpe,
+  hideTopButton,
 }) => {
   const cookies = new Cookies();
 
   useEffect(() => {
+    window.scroll(0, 0);
+    hideTopButton();
+
     if (cookieStatus || cookies.get('cookies-accept') === 'true') {
       cookies.set('url', identityUrl, '/');
     }
@@ -301,6 +306,9 @@ Identity.propTypes = {
   /** Open/close the informations of an other experience */
   openOtherExpe: PropTypes.func.isRequired,
   closeOtherExpe: PropTypes.func.isRequired,
+
+  /** Hide the Back-to-top button */
+  hideTopButton: PropTypes.func.isRequired,
 };
 
 Identity.defaultProps = {

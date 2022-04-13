@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { updateInputValue } from 'src/actions/mainActions';
+import { updateInputValue, hideTopButton } from 'src/actions/mainActions';
 import { submitAccepted, sendRequest } from 'src/actions/contactActions';
 
 import Contact from 'src/components/Contact';
@@ -38,6 +38,11 @@ const mapDispatchToProps = (dispatch) => ({
   /** Submit and send the request */
   sendRequest: (form) => {
     dispatch(sendRequest(form));
+  },
+
+  /** Hide the Back-to-top button */
+  hideTopButton: () => {
+    dispatch(hideTopButton());
   },
 });
 

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Cookies from 'universal-cookie';
 
-import { acceptCookies, refuseCookies } from 'src/actions/mainActions';
+import { acceptCookies, refuseCookies, hideTopButton } from 'src/actions/mainActions';
 
 import Cookie from 'src/components/Cookie';
 
@@ -36,6 +36,11 @@ const mapDispatchToProps = (dispatch) => ({
     cookies.remove('lang');
     cookies.remove('cookies-accept');
     dispatch(refuseCookies());
+  },
+
+  /** Hide the Back-to-top button */
+  hideTopButton: () => {
+    dispatch(hideTopButton());
   },
 });
 

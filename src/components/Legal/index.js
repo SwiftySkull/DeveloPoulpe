@@ -1,28 +1,29 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
 // == Import
-import home from 'src/data/Languages-files/home';
 import UnderConstruction from 'src/components/UnderConstruction';
+import legal from 'src/data/Languages-files/legal';
 
-import homePoulpe from 'src/assets/images/home-poulpe.jpg';
+import './legal.scss';
 
-import './home.scss';
-
-import { homeUrl } from 'src/data/urls';
+import {
+  legalUrl,
+} from 'src/data/urls';
+// import { createMarkup } from 'src/utils';
 
 // == Composant
 /**
- * Home component
+ * Contact page component
  *
  * @param {string} language Language of the website
  * @param {boolean} cookieStatus Boolean to determine if cookies are accepted or not
  * @param {func} hideTopButton Hide the Back-to-top button
  */
-const Home = ({
+const Legal = ({
   language,
   cookieStatus,
   hideTopButton,
@@ -34,39 +35,25 @@ const Home = ({
     hideTopButton();
 
     if (cookieStatus || cookies.get('cookies-accept') === 'true') {
-      cookies.set('url', homeUrl, '/');
+      cookies.set('url', legalUrl, '/mentions-legales');
     }
+
     if (!cookieStatus && cookies.get('cookies-accept') !== 'true') {
       cookies.remove('url');
     }
   }, []);
 
-  document.title = 'DeveloPoulpe';
-
   return (
-    <div id="home">
-      <h2>{home[language].title1}</h2>
-      <h2>{home[language].title2}</h2>
-      <div className="home-page">
-        <div className="home-poulpe">
-          <img className="home-poulpe-img" src={homePoulpe} alt="Home Poulpe" />
-        </div>
-        <div className="home-introduction">
-          <p>{home[language].p1}</p>
-          <p>{home[language].p2}</p>
-          <p>{home[language].p3}</p>
-          <p>{home[language].p4}</p>
-        </div>
-      </div>
-      <h3 className="catch-phrase">{home[language].p5}</h3>
+    <div id="siteMap">
+      <h2>{legal[language].title}</h2>
       <div style={{ position: 'relative', width: '100%', height: '300px' }}>
-        <UnderConstruction title="Website" />
+        <UnderConstruction title={legal[language].title} />
       </div>
     </div>
   );
 };
 
-Home.propTypes = {
+Legal.propTypes = {
   /** Language of the website */
   language: PropTypes.string,
 
@@ -77,9 +64,10 @@ Home.propTypes = {
   hideTopButton: PropTypes.func.isRequired,
 };
 
-Home.defaultProps = {
+Legal.defaultProps = {
+  /** Default language in French */
   language: 'fr',
 };
 
 // == Export
-export default Home;
+export default Legal;
