@@ -1,0 +1,85 @@
+@use 'src/styles/_vars';
+
+#underConstruction {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  .under-construction {
+    position: absolute;
+    top: 20%;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-left: 2rem;
+    z-index: 20;
+    text-transform: uppercase;
+    text-align: center;
+    animation: 2s linear infinite cligno;
+
+    @media (min-width: vars.$medium) {
+      font-size: 5rem;
+    }
+
+    @media (min-width: vars.$large) {
+      top: 30%;
+    }
+  }
+
+  .rideau {
+    width: 150vw;
+    height: 200%;
+    position: absolute;
+    top: -150px;
+    left: -20%;
+    background-color: rgba(0, 0, 0, 0.521);
+  }
+
+  .construction {
+    position: absolute;
+    width: 200vw;
+    height: 200%;
+    top: -150px;
+    display: flex;
+    justify-content: space-evenly;
+    left: -60%;
+
+    div {
+      width: 20px;
+      height: 100%;
+      background-color: vars.$mainColor;
+      transform: rotate(40deg);
+      transition: all 0.5s linear;
+
+      @media (min-width: vars.$small) {
+        width: 30px;
+        transition: all 0.5s linear;
+      }
+
+      @media (min-width: vars.$medium) {
+        width: 40px;
+        transition: all 0.5s linear;
+      }
+
+      @media (min-width: vars.$large) {
+        width: 50px;
+        transition: all 0.5s linear;
+      }
+    }
+  }
+}
+
+@keyframes cligno {
+  0% {
+    color: white;
+  }
+
+  50% {
+    color: yellow;
+  }
+
+  100% {
+    color: white;
+  }
+}

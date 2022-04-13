@@ -13,8 +13,10 @@ import Header from 'src/containers/Header';
 import Identity from 'src/containers/Identity';
 import Footer from 'src/containers/Footer';
 import Lang from 'src/containers/Lang';
+import Legal from 'src/containers/Legal';
 import Projects from 'src/containers/Projects';
-import TopButton from 'src/components/TopButton';
+import SiteMap from 'src/containers/SiteMap';
+import TopButton from 'src/containers/TopButton';
 
 import './app.scss';
 
@@ -25,13 +27,26 @@ import {
   cookiesUrl,
   changeLangUrl,
   homeUrl,
+  sitemapUrl,
+  legalUrl,
 } from 'src/data/urls';
 
 // == Composant
+/**
+ * Application component
+ *
+ * @param {function} changeLanguage Functino to change the language of the website
+ * @param {boolean} cookieStatus Boolean to determine if cookies are accepted or not
+ * @param {function} acceptCookies Function to accept and close the cookie box
+ * @param {function} displayTopButton Display the Back-to-top button
+ * @param {func} hideTopButton Hide the Back-to-top button
+ */
 const App = ({
   changeLanguage,
   cookieStatus,
   acceptCookies,
+  displayTopButton,
+  hideTopButton,
 }) => {
   const cookies = new Cookies();
 
@@ -47,14 +62,27 @@ const App = ({
 
   document.title = 'DeveloPoulpe';
 
+  const scrollToTopButton = () => {
+    const { scrollY } = window; // Don't get confused by what's scrolling - It's not the window
+
+    if (scrollY >= 250) {
+      displayTopButton();
+    }
+    else {
+      hideTopButton();
+    }
+  };
+
   return (
-    <div className="app">
+    <div id="app" onWheel={scrollToTopButton} onScroll={scrollToTopButton}>
       <Header />
       <Routes>
         <Route path={projectUrl} element={<Projects />} />
         <Route path={identityUrl} element={<Identity />} />
         <Route path={contactUrl} element={<Contact />} />
         <Route path={cookiesUrl} element={<Cookie />} />
+        <Route path={sitemapUrl} element={<SiteMap />} />
+        <Route path={legalUrl} element={<Legal />} />
         <Route path={`${changeLangUrl}/:lang`} element={<Lang />} />
         <Route path={homeUrl} element={<Home />} />
         {/* <Route path="*" element={<Error />} /> */}
@@ -76,6 +104,12 @@ App.propTypes = {
   /** Accept the cookies and set the cookies parameters
    * if cookies have already been accepted before */
   acceptCookies: PropTypes.func.isRequired,
+
+  /** Display the Back-to-top button */
+  displayTopButton: PropTypes.func.isRequired,
+
+  /** Hide the Back-to-top button */
+  hideTopButton: PropTypes.func.isRequired,
 };
 
 App.defaultProps = {

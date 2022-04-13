@@ -1,30 +1,43 @@
 @use 'src/styles/_vars';
 
 #topButton {
-  position: fixed;
-  bottom: 50px;
-  right: 15px;
-  height: 40px;
-  width: 40px;
-  z-index: 50;
+  height: 60px;
+  width: 60px;
   border-radius: 100%;
-  border: unset;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  position: fixed;
+  right: 2rem;
+  bottom: 5rem;
+  z-index: 50;
+  display: flex;
+  transition: all 0.5s ease-in-out;
   background-color: vars.$secondColor;
 
-  @media (min-width: vars.$medium) {
-    height: 50px;
-    width: 50px;
+  .arrow {
+    color: black;
   }
 
-  &:hover, &:focus {
+  &:hover {
+    cursor: pointer;
     background-color: vars.$mainColor;
+  }
+
+  @media (max-width: vars.$medium) {
+    opacity: 1 !important;
+    bottom: 1rem;
+    right: 1rem;
+    height: 40px;
+    width: 40px;
+    font-size: 1.4rem;
+
+    .arrow {
+      opacity: 1 !important;
+    }
   }
 
   &:active {
     background-color: white;
-  }
-
-  img {
-    width: 100%;
   }
 }

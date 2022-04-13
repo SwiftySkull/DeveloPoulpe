@@ -30,6 +30,7 @@ import { contactUrl } from 'src/data/urls';
  * @param {function} submitAccepted Captcha action to display the submit button
  * @param {boolean} submitButton Display status for the submit button
  * @param {function} sendRequest Send the form
+ * @param {func} hideTopButton Hide the Back-to-top button
  */
 const Contact = ({
   language,
@@ -44,10 +45,14 @@ const Contact = ({
   submitAccepted,
   submitButton,
   sendRequest,
+  hideTopButton,
 }) => {
   const cookies = new Cookies();
 
   useEffect(() => {
+    window.scroll(0, 0);
+    hideTopButton();
+
     if (cookieStatus || cookies.get('cookies-accept') === 'true') {
       cookies.set('url', contactUrl, '/');
     }
@@ -65,7 +70,7 @@ const Contact = ({
 
   return (
     <div id="contact">
-      <h1>{contact[language].title}</h1>
+      <h2>{contact[language].title}</h2>
       <div className="contact-content">
         <p>{contact[language].p1}</p>
         <p>{contact[language].p2} <a href="mailto:aurelien.beneyton@developoulpe.fr">aurelien.beneyton@developoulpe.fr</a>.</p>
@@ -133,6 +138,9 @@ Contact.propTypes = {
 
   /** Send the form */
   sendRequest: PropTypes.func.isRequired,
+
+  /** Hide the Back-to-top button */
+  hideTopButton: PropTypes.func.isRequired,
 };
 
 Contact.defaultProps = {

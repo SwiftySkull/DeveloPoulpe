@@ -20,16 +20,21 @@ import { cookiesUrl } from 'src/data/urls';
  * @param {boolean} cookieStatus Boolean if cookies are accepted or not
  * @param {function} acceptCookies Function to accept and close the cookie box
  * @param {function} refuseCookies Function to refuse and close the cookie box
+ * @param {func} hideTopButton Hide the Back-to-top button
  */
 const Cookie = ({
   language,
   cookieStatus,
   acceptCookies,
   refuseCookies,
+  hideTopButton,
 }) => {
   const cookies = new Cookies();
 
   useEffect(() => {
+    window.scroll(0, 0);
+    hideTopButton();
+
     if (cookieStatus || cookies.get('cookies-accept') === 'true') {
       cookies.set('url', cookiesUrl, '/');
     }
@@ -76,6 +81,9 @@ Cookie.propTypes = {
 
   /** Function when user refuses the cookies */
   refuseCookies: PropTypes.func.isRequired,
+
+  /** Hide the Back-to-top button */
+  hideTopButton: PropTypes.func.isRequired,
 };
 
 Cookie.defaultProps = {

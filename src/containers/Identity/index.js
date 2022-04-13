@@ -9,6 +9,8 @@ import {
   closeOtherExpe,
 } from 'src/actions/identityActions';
 
+import { hideTopButton } from 'src/actions/mainActions';
+
 import Identity from 'src/components/Identity';
 
 /**
@@ -55,6 +57,11 @@ const mapDispatchToProps = (dispatch) => ({
   /** Close an other experience's informations */
   closeOtherExpe: () => {
     dispatch(closeOtherExpe());
+  },
+
+  /** Hide the Back-to-top button */
+  hideTopButton: () => {
+    dispatch(hideTopButton());
   },
 });
 

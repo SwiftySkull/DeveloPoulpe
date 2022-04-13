@@ -14,7 +14,7 @@ const initialState = {
 };
 
 /**
- * Reducer for the main events.
+ * Reducer for the identity events.
  */
 function identityReducer(state = initialState, action) {
   switch (action.type) {
