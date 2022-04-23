@@ -1,6 +1,17 @@
 @use 'src/styles/_vars';
 
 #identity {
+  width: 90%;
+  margin: 0 auto;
+
+  @media (min-width: vars.$large) {
+    width: 80%;
+  }
+
+  @media (min-width: vars.$big) {
+    width: 70%;
+  }
+
   .identity-title {
     display: flex;
     margin: 0 auto;
@@ -49,7 +60,6 @@
   }
 
   .presentation {
-    width: 85%;
     margin: 0 auto;
     line-height: 1.8rem;
     font-size: 1.1rem;
@@ -66,7 +76,6 @@
   }
 
   .description {
-    width: 85%;
     line-height: 2rem;
     font-size: 1.1rem;
     margin: 2rem auto 3rem;
@@ -110,7 +119,6 @@
   }
 
   .identity-bloc {
-    width: 85%;
     margin: 0 auto;
     line-height: 2rem;
     font-size: 1.1rem;
@@ -212,7 +220,6 @@
   }
 
   .identity-one {
-    width: 85%;
     margin: 3rem auto 3rem;
     line-height: 2rem;
     font-size: 1.1rem;
@@ -328,7 +335,6 @@
   }
 
   .socials {
-    width: 85%;
     margin: 3rem auto;
     font-size: 1.1rem;
 
@@ -343,7 +349,7 @@
 
     .social-links {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       flex-wrap: wrap;
 
       a {

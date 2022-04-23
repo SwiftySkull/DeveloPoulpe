@@ -4,6 +4,14 @@
   width: 90%;
   margin: 0 auto;
 
+  @media (min-width: vars.$large) {
+    width: 80%;
+  }
+
+  @media (min-width: vars.$big) {
+    width: 70%;
+  }
+
   h2 {
     font-family: vars.$syncopate;
     font-size: 1.3rem;

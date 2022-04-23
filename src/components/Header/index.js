@@ -49,8 +49,8 @@ const Header = ({
         </h1>
         <div className={menuStatus ? 'nav-small-infos' : 'nav-small-infos close'}>
           <NavLink onClick={closePresentation} to={homeUrl}>{header[language].home}</NavLink>
-          <NavLink onClick={closePresentation} to={identityUrl}>{header[language].identity}</NavLink>
           <NavLink onClick={closePresentation} to={projectUrl}>{header[language].project}</NavLink>
+          <NavLink onClick={closePresentation} to={identityUrl}>{header[language].identity}</NavLink>
           <NavLink onClick={closePresentation} to={contactUrl}>{header[language].contact}</NavLink>
         </div>
         <button type="button" className={!menuStatus ? 'open-menu' : 'close-menu'} onClick={() => changeMenu(!menuStatus)}>
@@ -62,7 +62,7 @@ const Header = ({
       <nav className="nav-big">
         <div>
           <NavLink onClick={closePresentation} to={homeUrl}>{header[language].home}</NavLink>
-          <NavLink onClick={closePresentation} to={identityUrl}>{header[language].identity}</NavLink>
+          <NavLink onClick={closePresentation} to={projectUrl}>{header[language].project}</NavLink>
         </div>
         <h1>
           <NavLink onClick={closePresentation} to={homeUrl} className="title">
@@ -70,7 +70,7 @@ const Header = ({
           </NavLink>
         </h1>
         <div>
-          <NavLink onClick={closePresentation} to={projectUrl}>{header[language].project}</NavLink>
+          <NavLink onClick={closePresentation} to={identityUrl}>{header[language].identity}</NavLink>
           <NavLink onClick={closePresentation} to={contactUrl}>{header[language].contact}</NavLink>
         </div>
       </nav>

@@ -2,93 +2,134 @@
 
 #footer {
   height: 100%;
-  min-height: 150px;
-  position: relative;
-  float: inline-end;
+  min-height: 100px;
   display: flex;
   padding: 5px;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
 
-  .icons8 {
-    border-radius: 2px;
-    align-self: flex-end;
-    margin-right: 2rem;
-
-    &:hover, &:focus {
-      background-color: #fff;
-      color: vars.$mainColor;
-    }
-
-    &:active {
-      text-decoration: underline;
-    }
-  }
-
-  .site-map {
-    border-radius: 2px;
-    align-self: flex-end;
-    margin-right: 2rem;
-
-    &:hover, &:focus {
-      background-color: #fff;
-      color: vars.$mainColor;
-    }
-
-    &:active {
-      text-decoration: underline;
+  >div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+  
+    @media (min-width: vars.$medium) {
+      flex-direction: row;
     }
   }
 
-  .legal-mentions {
-    border-radius: 2px;
-    align-self: flex-end;
-    margin-right: 2rem;
+  >p {
+    text-align: center;
+    margin: 1rem 0;
+  }
 
-    &:hover, &:focus {
-      background-color: #fff;
-      color: vars.$mainColor;
+  .footer-links {
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+    
+    a:not(:last-child) {
+      margin-bottom: 1rem;
     }
 
-    &:active {
-      text-decoration: underline;
+    @media (min-width: vars.$medium) {
+      flex-direction: row;
+      align-self: flex-end;
+
+      a:not(:last-child) {
+        margin-bottom: unset;
+        margin-right: 2rem;
+      }
+    }
+  
+    .site-map {
+      border-radius: 2px;
+        
+      &:hover, &:focus {
+        background-color: #fff;
+        color: vars.$mainColor;
+      }
+  
+      &:active {
+        text-decoration: underline;
+      }
+    }
+  
+    .legal-mentions {
+      border-radius: 2px;
+  
+      &:hover, &:focus {
+        background-color: #fff;
+        color: vars.$mainColor;
+      }
+  
+      &:active {
+        text-decoration: underline;
+      }
+    }
+
+    .icons8 {
+      border-radius: 2px;
+  
+      &:hover, &:focus {
+        background-color: #fff;
+        color: vars.$mainColor;
+      }
+  
+      &:active {
+        text-decoration: underline;
+      }
     }
   }
 
-  .cookie-button {
-    position: absolute;
-    bottom: 5px;
-    right: 10px;
-    background: unset;
-    border: unset;
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;
+  .cookies {
+    display: flex;
+    align-items: flex-end;
+    padding: 5px;
+    align-self: center;
 
-    img {
-      height: 100%;
+    @media (min-width: vars.$medium) {
+      align-self: unset;
     }
-
-    &:focus, &:hover {
-      background-color: vars.$mainColor;
+    
+    .cookie-button {
+      background: unset;
+      border: unset;
+      height: 30px;
+      width: 30px;
+      border-radius: 100%;
+  
+      img {
+        height: 100%;
+      }
+  
+      &:focus, &:hover {
+        background-color: vars.$mainColor;
+      }
+  
+      &:active {
+        background-color: white;
+      }
     }
-
-    &:active {
-      background-color: white;
-    }
-  }
-
-  .cookie-text {
-    position: absolute;
-    bottom: 5px;
-    right: 50px;
-    border-radius: 2px;
-
-    &:hover, &:focus {
-      background-color: #fff;
-      color: vars.$mainColor;
-    }
-
-    &:active {
-      text-decoration: underline;
+  
+    .cookie-text {
+      border-radius: 2px;
+      margin-right: 1rem;
+      text-align: right;
+  
+      &:hover, &:focus {
+        background-color: #fff;
+        color: vars.$mainColor;
+      }
+  
+      &:active {
+        text-decoration: underline;
+      }
     }
   }
 }
