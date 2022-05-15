@@ -35,7 +35,7 @@
       
       a {
         margin-bottom: 1.5rem;
-        transition: all 0.5s linear;
+        transition: all 0.3s linear;
 
         &:hover, &:focus {
           background-color: #fff;
@@ -53,7 +53,7 @@
 
         a {
           margin-bottom: 0;
-          transition: all 0.5s linear;
+          transition: all 0.3s linear;
         }
       }
     }
@@ -76,7 +76,7 @@
         height: 5px;
         width: 60px;
         background-color: vars.$secondColor;
-        transition: all 0.5s linear;
+        transition: all 0.3s linear;
       }
     }
 
@@ -95,13 +95,13 @@
 
       .bar {
         margin: 0 auto 0.5rem;
-        height: 5px;
+        height: 6px;
         width: 60px;
         background-color: vars.$secondColor;
-        transition: all 0.5s linear;
+        transition: all 0.3s linear;
 
         &.first-bar {
-          transform: rotate(45deg) translate(9px, 9px);
+          transform: rotate(45deg) translate(11px, 10px) scale(0.6);
         }
 
         &.second-bar {
@@ -109,7 +109,7 @@
         }
 
         &.third-bar {
-          transform: rotate(-45deg) translateX(9px) translateY(-9px);
+          transform: rotate(-45deg) translateX(9px) translateY(-9px) scale(0.6);
         }
       }
     }
@@ -133,7 +133,7 @@
       &:hover:not(.title), &:focus:not(.title) {
         background-color: #fff;
         color: vars.$mainColor;
-        transition: background-color 0.5s linear, color 0.5s linear;
+        transition: background-color 0.3s linear, color 0.3s linear;
       }
 
       &.active:not(.title) {

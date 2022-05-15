@@ -9,6 +9,7 @@ import TopButton from 'src/components/TopButton';
  */
 
 const mapStateToProps = (state) => ({
+  language: state.main.language,
   backToTopButton: state.main.backToTopButton,
 });
 

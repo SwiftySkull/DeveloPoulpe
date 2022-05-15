@@ -6,13 +6,12 @@ import Cookies from 'universal-cookie';
 
 // == Import
 import home from 'src/data/Languages-files/home';
-import UnderConstruction from 'src/components/UnderConstruction';
 
-import homePoulpe from 'src/assets/images/home-poulpe.jpg';
+import swifty from 'src/assets/images/swifty.png';
 
 import './home.scss';
 
-import { homeUrl } from 'src/data/urls';
+import { homeUrl, contactUrl } from 'src/data/urls';
 
 // == Composant
 /**
@@ -45,22 +44,30 @@ const Home = ({
 
   return (
     <div id="home">
-      <h2>{home[language].title1}</h2>
-      <h2>{home[language].title2}</h2>
-      <div className="home-page">
-        <div className="home-poulpe">
-          <img className="home-poulpe-img" src={homePoulpe} alt="Home Poulpe" />
+      <div className="home">
+        <h2>{home[language].title1}</h2>
+        <h2>{home[language].title2}</h2>
+        <div className="home-page">
+          <div className="home-poulpe">
+            <img className="home-poulpe-img" src={swifty} alt="Home Poulpe" />
+          </div>
+          <div className="home-introduction">
+            <p>{home[language].p1}</p>
+            <p>{home[language].p2}</p>
+            <p>{home[language].p3}</p>
+            <p>{home[language].p4}</p>
+          </div>
         </div>
-        <div className="home-introduction">
-          <p>{home[language].p1}</p>
-          <p>{home[language].p2}</p>
-          <p>{home[language].p3}</p>
-          <p>{home[language].p4}</p>
-        </div>
+        <h3 className="catch-phrase">{home[language].p5}</h3>
       </div>
-      <h3 className="catch-phrase">{home[language].p5}</h3>
-      <div style={{ position: 'relative', width: '100%', height: '300px' }}>
-        <UnderConstruction title="Website" />
+      <div className="services">
+        <p>{home[language].services.main}</p>
+        <ul>
+          {home[language].services.list.map((li, id) => (
+            <li key={id}>{li}</li>
+          ))}
+        </ul>
+        <p>{home[language].services.form1}<Link title={home[language].infobulle} to={contactUrl}>{home[language].services.form2}</Link>.</p>
       </div>
     </div>
   );

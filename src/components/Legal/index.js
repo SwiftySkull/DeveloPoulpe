@@ -13,7 +13,7 @@ import './legal.scss';
 import {
   legalUrl,
 } from 'src/data/urls';
-// import { createMarkup } from 'src/utils';
+import { createMarkup } from 'src/utils';
 
 // == Composant
 /**
@@ -44,11 +44,21 @@ const Legal = ({
   }, []);
 
   return (
-    <div id="siteMap">
+    <div id="legal">
       <h2>{legal[language].title}</h2>
-      <div style={{ position: 'relative', width: '100%', height: '300px' }}>
-        <UnderConstruction title={legal[language].title} />
-      </div>
+      {/* {language === 'en' && (
+        <div style={{ position: 'relative', width: '100%', height: '300px' }}>
+          <UnderConstruction title={`English ${legal[language].title} Translation`} />
+        </div>
+      )} */}
+      <p>{legal[language].p1}</p>
+      <div dangerouslySetInnerHTML={createMarkup(legal[language].edit)} />
+      <div dangerouslySetInnerHTML={createMarkup(legal[language].heb)} />
+      <div dangerouslySetInnerHTML={createMarkup(legal[language].cookies)} />
+      <div dangerouslySetInnerHTML={createMarkup(legal[language].links)} />
+      <div dangerouslySetInnerHTML={createMarkup(legal[language].datalimit)} />
+      <div dangerouslySetInnerHTML={createMarkup(legal[language].intell)} />
+      <div dangerouslySetInnerHTML={createMarkup(legal[language].perso)} />
     </div>
   );
 };

@@ -7,16 +7,16 @@ $big: 1300px; // vars.$big;
 $extreme: 1600px; // vars.$extreme;
 
 // == Colors
-// $mainColor: purple; // vars.$mainColor;
-// $secondColor: rgb(0, 81, 255); // vars.$secondColor;
-$mainColor: rgb(0, 81, 255); // vars.$mainColor;
-$secondColor: purple; // vars.$secondColor;
+$mainColor: purple; // vars.$mainColor;
+$secondColor: rgb(0, 81, 255); // vars.$secondColor;
+// $mainColor: rgb(0, 81, 255); // vars.$mainColor;
+// $secondColor: purple; // vars.$secondColor;
 $thirdColor: black; // vars.$thirdColor;
 $textColor: white; // vars.$textColor;
 
 $borderBackground: rgb(0, 0, 0);
-$background: linear-gradient(90deg, $mainColor, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $mainColor, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $mainColor); // vars.$background;
-// $background: linear-gradient(rgb(75, 246, 255),rgb(0, 1, 82)); // vars.$background;
+$background: linear-gradient(90deg, $mainColor, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $mainColor, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground,$borderBackground, $borderBackground, $mainColor); // vars.$background;
+// $background: linear-gradient(rgb(0, 200, 211),rgb(0, 1, 43)); // vars.$background;
 
 // == Box
 

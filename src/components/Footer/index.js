@@ -30,11 +30,18 @@ const Footer = ({
 
   return (
     <div id="footer">
-      <Link to={sitemapUrl} onClick={closePresentation} className="site-map">{header[language].sitemap}</Link>
-      <Link to={legalUrl} onClick={closePresentation} className="legal-mentions">{header[language].legal}</Link>
-      <NavLink to={cookiesUrl} onClick={closePresentation} className="cookie-text">{footer[language].title}</NavLink>
-      <Link to={cookiesUrl} onClick={closePresentation} className="cookie-button"><img src={cookieImg} alt="Cookie" /></Link>
-      <a className="icons8" href="https://icons8.com/" target="_blank" rel="noreferrer noopener">{footer[language].icons}</a>
+      <div>
+        <div className="footer-links">
+          <Link to={sitemapUrl} onClick={closePresentation} className="site-map">{header[language].sitemap}</Link>
+          <Link to={legalUrl} onClick={closePresentation} className="legal-mentions">{header[language].legal}</Link>
+          <a className="icons8" href="https://icons8.com/" target="_blank" rel="noreferrer noopener">{footer[language].icons}</a>
+        </div>
+        <div className="cookies">
+          <NavLink to={cookiesUrl} onClick={closePresentation} className="cookie-text">{footer[language].title}</NavLink>
+          <Link to={cookiesUrl} onClick={closePresentation} className="cookie-button"><img src={cookieImg} alt="Cookie" /></Link>
+        </div>
+      </div>
+      <p>©️ 2022 DeveloPoulpe</p>
     </div>
   );
 };
