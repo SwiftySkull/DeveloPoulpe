@@ -15,7 +15,11 @@ $thirdColor: black; // vars.$thirdColor;
 $textColor: white; // vars.$textColor;
 
 $borderBackground: rgb(0, 0, 0);
+<<<<<<< HEAD
 $background: linear-gradient(90deg, $mainColor, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $mainColor, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground,$borderBackground, $borderBackground, $mainColor); // vars.$background;
+=======
+$background: linear-gradient(90deg, $mainColor, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $mainColor, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground,$borderBackground, $borderBackground, $mainColor); // vars.$background;
+>>>>>>> ba2dae913535fbe82b21523e25331ac9272d2bb1
 // $background: linear-gradient(rgb(0, 200, 211),rgb(0, 1, 43)); // vars.$background;
 
 // == Box

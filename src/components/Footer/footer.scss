@@ -40,7 +40,10 @@
     @media (min-width: vars.$medium) {
       flex-direction: row;
       align-self: flex-end;
+<<<<<<< HEAD
       margin: unset;
+=======
+>>>>>>> ba2dae913535fbe82b21523e25331ac9272d2bb1
 
       a:not(:last-child) {
         margin-bottom: unset;
