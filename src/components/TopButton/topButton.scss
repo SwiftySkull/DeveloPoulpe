@@ -15,12 +15,12 @@
   transition: all 0.5s ease-in-out;
 
   .arrow {
-    color: black;
+    color: white;
   }
 
   &:hover, &:focus {
     cursor: pointer;
-    background-color: vars.$mainColor;
+    background-color: vars.$secondColor;
     color: white;
   }
 
@@ -67,7 +67,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(black, vars.$secondColor);
+        background: linear-gradient(black, vars.$mainColor);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -122,20 +122,20 @@
 
   &:hover, &focus {
     div span {
-      background: linear-gradient(black, vars.$mainColor);
+      background: linear-gradient(black, vars.$secondColor);
     }
 
     .bottom {
       width: 100px;
       height: 100px;
-      background: vars.$mainColor;
+      background: vars.$secondColor;
       transform: rotateX(90deg) translateZ(-50px);
       filter: blur(40px);
-      box-shadow: 0px 0px 20px rgba(128, 0, 128, 0.2),
-      0px 0px 80px rgba(128, 0, 128, 0.4),
-      0px 0px 180px rgba(128, 0, 128, 0.6),
-      0px 0px 280px rgba(128, 0, 128, 0.8),
-      0px 0px 380px rgba(128, 0, 128, 1);
+      box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.2),
+      0px 0px 80px rgba(0, 255, 255, 0.4),
+      0px 0px 180px rgba(0, 255, 255, 0.6),
+      0px 0px 280px rgba(0, 255, 255, 0.8),
+      0px 0px 380px rgba(0, 255, 255, 1);
 
       @media (max-width: vars.$medium) {
         width: 80px;

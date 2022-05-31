@@ -12,7 +12,7 @@ export default {
       list: [
         'Création de Site Unique selon vos envies',
         'Mise à jour de votre site',
-        'Gestion de Dase de Données et Administration',
+        'Gestion de Base de Données et Administration',
         'Hébergement sur Serveur',
         'Communication Continue',
       ],

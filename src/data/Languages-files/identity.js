@@ -7,12 +7,14 @@ export default {
     nickname: 'Surnom',
     birth: 'Naissance',
     home: 'Résidence',
+    cv: 'Télécharger le CV',
     read_more: 'Lire plus',
     read_less: 'Lire moins',
     what_I_learned: 'Connaissances et compétences acquises',
     start_in: 'Début en',
     end_in: 'Fin en',
-    bio: '<p>Je suis un jeune développeur web Breton.</p><br><p><strong>Gameur</strong> depuis petit, fan de tout ce qui touche à la <strong>culture japonaise</strong> et à l\'univers des <strong>manga</strong> et amateur de <strong>nouvelles technologies</strong>.</p><p>J\'ai des notions de photographie qui m\'ont servies pour des projets personnels et il peut m\'arriver de dessiner sur tablette graphique.</p><br><p>En dehors du monde virtuel j\'aime <strong>conduire pour le loisir</strong>, faire des balades en voiture et aussi aller à la <strong>salle de sport</strong> pour me prévenir de troubles musculaires.</p><br><p>Le design de mon avatar <em>(merci à <a href="https://www.instagram.com/anachanlagamine/">AnaChan LaGamine</a>)</em> est un mélange de plusieurs éléments qui me correspondent :</p><ul><li>La <strong>corne de licorne</strong> fait référence à la <strong>part d\'enfant en moi</strong>, les rêves mais aussi l\'attrait pour la fiction et par la même occasion l\'univers des mangas,</li><li>Le <strong>masque de docteur de la peste</strong> fait référence à un jeu vidéo et à ma passion ceux-ci,</li><li>Les <strong>tentacules</strong> représentent ma <strong>capacité multitâche</strong>, spécialement dans le code à être capable de m\'adapter, effectuer plusieurs tâches en même temps mais aussi me fondre dans mon environnement.</li></ul><br>',
+    bio: '<p>Je suis un jeune développeur web Breton.</p><br><p><strong>Gameur</strong> depuis petit, fan de tout ce qui touche à la <strong>culture japonaise</strong> et à l\'univers des <strong>manga</strong> et amateur de <strong>nouvelles technologies</strong>.</p><p>J\'ai des notions de photographie qui m\'ont servies pour des projets personnels et il peut m\'arriver de dessiner sur tablette graphique.</p><br><p>En dehors du monde virtuel j\'aime <strong>conduire pour le loisir</strong>, faire des balades en voiture et aussi aller à la <strong>salle de sport</strong> pour me prévenir de troubles musculaires.</p><br>',
+    // <p>Le design de mon avatar <em>(merci à <a href="https://www.instagram.com/anachanlagamine/">AnaChan LaGamine</a>)</em> est un mélange de plusieurs éléments qui me correspondent :</p><ul><li>La <strong>corne de licorne</strong> fait référence à la <strong>part d\'enfant en moi</strong>, les rêves mais aussi l\'attrait pour la fiction et par la même occasion l\'univers des mangas,</li><li>Le <strong>masque de docteur de la peste</strong> fait référence à un jeu vidéo et à ma passion ceux-ci,</li><li>Les <strong>tentacules</strong> représentent ma <strong>capacité multitâche</strong>, spécialement dans le code à être capable de m\'adapter, effectuer plusieurs tâches en même temps mais aussi me fondre dans mon environnement.</li></ul><br>
     formations: [
       {
         id: 1,
@@ -141,12 +143,14 @@ export default {
     nickname: 'Nickname',
     birth: 'Birthdate',
     home: 'Location',
+    cv: 'Download CV',
     read_more: 'Read more',
     read_less: 'Read less',
     what_I_learned: 'Knowledge and skills acquired',
     start_in: 'Starts in',
     end_in: 'Ends in',
-    bio: '<p>I am a young Breton web developer.</p><br><p><strong>Gamer</strong> since I\'m a kid, fan of everything related to <strong>Japanese culture</strong> and <strong>manga</strong> universe and lover of <strong>new technologies</strong>.</p><p>I have photography skills that have been useful for personnal projects, and sometimes I draw on graphic tablet.</p><br><p>Besides the virtual world, I love <strong>driving for pleasure</strong>, going on a car ride and going to the <strong>gym</strong> to prevent my body from muscle disorder.</p><br><p>My avatar\'s design <em>(Thanks to <a href="https://www.instagram.com/anachanlagamine/">AnaChan LaGamine</a>)</em> is a mix from several elements that suit me :</p><ul><li>The <strong>unicorn horn</strong> refers to my <strong>child part</strong>, the dreams but also my interest for fiction and manga universe at the same time,</li><li>The <strong>Plague Mask</strong> refers to a video game and my passion for it,</li><li>the <strong>tentacles</strong> represent ma <strong>multitask skill</strong>, especially in code being able to adapt, doing several tasks at the same time but also blend into my environment.</li></ul><br>',
+    bio: '<p>I am a young Breton web developer.</p><br><p><strong>Gamer</strong> since I\'m a kid, fan of everything related to <strong>Japanese culture</strong> and <strong>manga</strong> universe and lover of <strong>new technologies</strong>.</p><p>I have photography skills that have been useful for personnal projects, and sometimes I draw on graphic tablet.</p><br><p>Besides the virtual world, I love <strong>driving for pleasure</strong>, going on a car ride and going to the <strong>gym</strong> to prevent my body from muscle disorder.</p><br>',
+    // <p>My avatar\'s design <em>(Thanks to <a href="https://www.instagram.com/anachanlagamine/">AnaChan LaGamine</a>)</em> is a mix from several elements that suit me :</p><ul><li>The <strong>unicorn horn</strong> refers to my <strong>child part</strong>, the dreams but also my interest for fiction and manga universe at the same time,</li><li>The <strong>Plague Mask</strong> refers to a video game and my passion for it,</li><li>the <strong>tentacles</strong> represent ma <strong>multitask skill</strong>, especially in code being able to adapt, doing several tasks at the same time but also blend into my environment.</li></ul><br>
     formations: [
       {
         id: 1,

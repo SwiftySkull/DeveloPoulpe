@@ -11,7 +11,7 @@ import dateFormat, { i18n } from 'dateformat';
 // == Import
 import identity from 'src/data/Languages-files/identity';
 import identityImage from 'src/data/identity';
-import swifty from 'src/assets/images/swifty.png';
+import photoID from 'src/assets/images/photoID.png';
 import instagram from 'src/data/instagram';
 import discord from 'src/data/discord';
 import linkedin from 'src/data/linkedin';
@@ -133,13 +133,14 @@ const Identity = ({
         <img className="second-identity" src={identityImage} alt="Identity" />
       </div>
       <div className="profile-picture">
-        <img src={swifty} alt="Profile" />
+        <img src={photoID} alt="Profile" />
       </div>
       <div className="presentation">
         <p><strong>{identity[language].name}</strong> : Aurélien Beneyton</p>
         <p><strong>{identity[language].nickname}</strong> : Swifty / Poulpy</p>
         <p><strong>{identity[language].birth}</strong> : 02/04/1994</p>
         <p><strong>{identity[language].home}</strong> : Saint-Brieuc</p>
+        <a className="download-cv" target="blank" href="/assets/pdf/curiculum-vitae.pdf"><button className="download-cv-button" type="button">{identity[language].cv}</button></a>
       </div>
       <div className="description">
         <h3>Description :</h3>

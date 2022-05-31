@@ -17,6 +17,8 @@ import Legal from 'src/containers/Legal';
 import Projects from 'src/containers/Projects';
 import SiteMap from 'src/containers/SiteMap';
 import TopButton from 'src/containers/TopButton';
+import Bubble from 'src/components/Bubble';
+import Algues from 'src/components/Algues';
 
 import './app.scss';
 
@@ -90,6 +92,8 @@ const App = ({
       <CookiePopup />
       <TopButton />
       <Footer />
+      <Bubble />
+      <Algues />
     </div>
   );
 };
