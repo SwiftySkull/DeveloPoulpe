@@ -21,8 +21,14 @@
   &:hover, &:focus {
     cursor: pointer;
     background-color: vars.$secondColor;
-    color: white;
   }
+
+  &:active {
+    .arrow {
+      color: black;
+    }
+  }
+
 
   @media (max-width: vars.$medium) {
     opacity: 1 !important;

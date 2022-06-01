@@ -128,9 +128,7 @@ const Identity = ({
   return (
     <div id="identity">
       <div className="identity-title">
-        <img className="first-identity" src={identityImage} alt="Identity" />
         <h2>{identity[language].title}</h2>
-        <img className="second-identity" src={identityImage} alt="Identity" />
       </div>
       <div className="profile-picture">
         <img src={photoID} alt="Profile" />

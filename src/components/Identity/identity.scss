@@ -16,29 +16,14 @@
   .identity-title {
     display: flex;
     margin: 0 auto;
-    width: fit-content;
-
-    img {
-      background-color: vars.$mainColor;
-      border-radius: 5px;
-      padding: 2px;
-      width: 50px;
-
-      &.first-identity {
-        transform: scaleX(-1);
-      }
-
-      @media (min-width: vars.$medium) {
-        width: unset;
-      }
-    }
-    
+    width: fit-content;    
 
     h2 {
       font-family: vars.$syncopate;
       font-size: 1.3rem;
       align-self: center;
       margin: 0 1rem;
+      text-shadow: none;
 
       @media (min-width: vars.$medium) {
         font-size: 1.8rem;
