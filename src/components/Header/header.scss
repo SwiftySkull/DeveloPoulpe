@@ -2,15 +2,127 @@
 
 #header {
   font-family: vars.$syncopate;
-  height: vars.$header;
+  height: fit-content;
   font-weight: bold;
   position: fixed;
   top: 0;
   width: 100%;
   // background: vars.$background;
-  background: linear-gradient(90deg, black,black, black, black, black, blue, black, black, black, black, black);
+  background: vars.$bottomBackgroundColor;
+  z-index: 159;
+  // background: linear-gradient(90deg, black,black, black, black, black, blue, black, black, black, black, black);
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  text-shadow: 0px 0px 3px black;
+  @media (min-width: vars.$large) {
+    height: vars.$header;
+  }
 
-  nav {
+  .nav-small {
+    text-align: center;
+
+    @media (min-width: vars.$large) {
+      display: none;
+    }
+
+    h1 {
+      margin-top: 2.5rem;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .nav-small-infos {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 0 0;
+      
+      a {
+        margin-bottom: 1.5rem;
+        transition: all 0.3s linear;
+
+        &:hover, &:focus {
+          background-color: #fff;
+          color: vars.$mainColor;
+        }
+
+        &.active {
+          text-decoration: underline;
+        }
+      }
+
+      &.close {
+        margin: 0;
+        font-size: 0;
+
+        a {
+          margin-bottom: 0;
+          transition: all 0.3s linear;
+        }
+      }
+    }
+
+    .open-menu {
+      margin: 2rem auto 1rem;
+      background-color: unset;
+      border: unset;
+
+      &:hover, &:focus {
+        cursor: pointer;
+        
+        .bar {
+          background-color: rgb(0, 140, 255);
+        }
+      }
+
+      .bar {
+        margin: 0 auto 0.5rem;
+        height: 5px;
+        width: 60px;
+        background-color: vars.$secondColor;
+        transition: all 0.3s linear;
+      }
+    }
+
+    .close-menu {
+      margin: 0.5rem auto 1rem;
+      background-color: unset;
+      border: unset;
+
+      &:hover, &:focus {
+        cursor: pointer;
+        
+        .bar {
+          background-color: rgb(0, 140, 255);
+        }
+      }
+
+      .bar {
+        margin: 0 auto 0.5rem;
+        height: 6px;
+        width: 60px;
+        background-color: vars.$secondColor;
+        transition: all 0.3s linear;
+
+        &.first-bar {
+          transform: rotate(45deg) translate(11px, 10px) scale(0.6);
+        }
+
+        &.second-bar {
+          background-color: unset;
+        }
+
+        &.third-bar {
+          transform: rotate(-45deg) translateX(9px) translateY(-9px) scale(0.6);
+        }
+      }
+    }
+  }
+
+  .nav-big {
+    @media (max-width: vars.$large) {
+      display: none;
+    }
+
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -24,7 +136,7 @@
       &:hover:not(.title), &:focus:not(.title) {
         background-color: #fff;
         color: vars.$mainColor;
-        transition: background-color 0.5s linear, color 0.5s linear;
+        transition: background-color 0.3s linear, color 0.3s linear;
       }
 
       &.active:not(.title) {

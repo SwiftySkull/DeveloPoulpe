@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import Cookies from 'universal-cookie';
 
-import { changeLanguage } from 'src/actions/mainActions';
+import { closeForma, closeExpe, closeOtherExpe } from 'src/actions/identityActions';
+import { displayWebsiteInfos } from 'src/actions/projectsActions';
+import { changeLanguage, changeMenu } from 'src/actions/mainActions';
 
 import Header from 'src/components/Header';
 
@@ -11,6 +13,7 @@ import Header from 'src/components/Header';
 
 const mapStateToProps = (state) => ({
   language: state.main.language,
+  menuStatus: state.main.menuStatus,
 });
 
 /**
@@ -26,6 +29,20 @@ const mapDispatchToProps = (dispatch) => ({
     const cookies = new Cookies();
     cookies.set('lang', language, '/');
     dispatch(changeLanguage(language));
+  },
+
+  /** Close the informations of the presentation page */
+  closePresentation: () => {
+    dispatch(closeForma());
+    dispatch(closeExpe());
+    dispatch(closeOtherExpe());
+    dispatch(changeMenu(false));
+    dispatch(displayWebsiteInfos(0));
+  },
+
+  /** Open/Close the menu */
+  changeMenu: (menuStatus) => {
+    dispatch(changeMenu(menuStatus));
   },
 });
 

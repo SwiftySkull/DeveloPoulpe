@@ -1,5 +1,124 @@
 @use 'src/styles/_vars';
 
 #contact {
-  
+  width: 90%;
+  margin: 0 auto;
+
+  @media (min-width: vars.$large) {
+    width: 80%;
+  }
+
+  @media (min-width: vars.$big) {
+    width: 70%;
+  }
+
+  h2 {
+    font-family: vars.$syncopate;
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 0 1rem;
+
+    @media (min-width: vars.$medium) {
+      font-size: 1.8rem;
+    }
+  }
+
+  .contact-content {
+    margin: 1rem 0 3rem;
+    line-height: 1.6rem;
+
+    p {
+      margin: 2rem 0;
+    }
+  }
+
+  .contac-form {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    line-height: 1.6rem;
+
+    @media (min-width: vars.$medium) {
+      line-height: 1.3rem;
+    }
+
+    >p {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      
+      @media (min-width: vars.$medium) {
+        width: 300px;
+      }
+
+      &.label-name p::after,
+      &.label-subject p::after,
+      &.label-message p::after {
+        content: '*';
+        margin-left: 1rem;
+        color: red;
+      }
+
+      .input-field {
+        margin-top: 0.5rem;
+        height: 1.6rem;
+        font-size: 1.2rem;
+        font-family: vars.$mono;
+        border: unset;
+
+        &:focus {
+          border: 2px solid vars.$mainColor;
+        }
+
+        &#field-message {
+          width: 100%;
+          resize: vertical;
+          min-height: 200px;
+
+          @media (min-width: vars.$medium) {
+            width: 600px;
+            min-height: 150px;
+          }
+
+          &:focus {
+            border: 4px solid vars.$mainColor;
+          }
+        }
+      }
+    }
+
+    .captcha {
+      margin: 2rem auto 1rem;
+
+      @media (min-width: vars.$medium) {
+        margin: 2rem 0 1rem;
+      }
+    }
+
+    .contact-button {
+      margin: 1rem auto;
+      border: unset;
+      border-radius: 5px;
+      padding: 10px 0;
+      width: 180px;
+      font-size: 1rem;
+
+      @media (min-width: vars.$medium) {
+        margin: 1rem 0;
+      }
+
+      &:hover, &:focus {
+        background-color: vars.$mainColor;
+      }
+
+      &:active {
+        color: white;
+      }
+    }
+  }
 }

@@ -1,6 +1,11 @@
 import { connect } from 'react-redux';
 
-import { changeLanguage, acceptCookies } from 'src/actions/mainActions';
+import {
+  changeLanguage,
+  acceptCookies,
+  displayTopButton,
+  hideTopButton,
+} from 'src/actions/mainActions';
 
 import App from 'src/components/App';
 
@@ -30,6 +35,16 @@ const mapDispatchToProps = (dispatch) => ({
    */
   acceptCookies: () => {
     dispatch(acceptCookies());
+  },
+
+  /** Display the Back-to-top button */
+  displayTopButton: () => {
+    dispatch(displayTopButton());
+  },
+
+  /** Hide the Back-to-top button */
+  hideTopButton: () => {
+    dispatch(hideTopButton());
   },
 });
 

@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 
+import { closeForma, closeExpe, closeOtherExpe } from 'src/actions/identityActions';
+
 import Footer from 'src/components/Footer';
 
 /**
@@ -14,9 +16,12 @@ const mapStateToProps = (state) => ({
  * To dispatch function in the component
  */
 const mapDispatchToProps = (dispatch) => ({
-  // loadElements: () => {
-  //   dispatch(loadElements());
-  // },
+  /** Close the informations of the presentation page */
+  closePresentation: () => {
+    dispatch(closeForma());
+    dispatch(closeExpe());
+    dispatch(closeOtherExpe());
+  },
 });
 
 // === Assistant creation for the component

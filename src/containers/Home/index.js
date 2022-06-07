@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 
+import { hideTopButton } from 'src/actions/mainActions';
+
 import Home from 'src/components/Home';
 
 /**
@@ -15,9 +17,10 @@ const mapStateToProps = (state) => ({
  * To dispatch function in the component
  */
 const mapDispatchToProps = (dispatch) => ({
-  // loadElements: () => {
-  //   dispatch(loadElements());
-  // },
+  /** Hide the Back-to-top button */
+  hideTopButton: () => {
+    dispatch(hideTopButton());
+  },
 });
 
 // === Assistant creation for the component

@@ -1,5 +1,97 @@
 @use 'src/styles/_vars';
 
 #home {
-  // color: white;
+  width: 90%;
+  margin: 0 auto;
+
+  @media (min-width: vars.$large) {
+    width: 80%;
+  }
+
+  @media (min-width: vars.$big) {
+    width: 70%;
+  }
+
+  .home {  
+    h2 {
+      font-family: vars.$syncopate;
+      font-size: 1.3rem;
+      text-align: center;
+      margin: 1rem;
+  
+      @media (min-width: vars.$medium) {
+        font-size: 1.8rem;
+      }
+    }
+  
+    .home-page {
+      @media (min-width: vars.$large) {
+        display: flex;
+      }
+  
+      .home-introduction {
+        margin: auto;      
+        line-height: 2rem;
+  
+        @media (min-width: vars.$large) {
+          width: 50%;
+        }
+      }
+  
+      .home-poulpe {
+        text-align: center;
+        margin: 1rem auto;
+  
+        @media (min-width: vars.$large) {
+          width: 50%;
+          order: 1;
+          padding: 1rem;
+        }
+  
+        .home-poulpe-img {
+          border-radius: 20px;
+          max-height: 400px;
+        }
+      }
+    }
+    
+    .catch-phrase {
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 4rem 0;
+  
+      @media (min-width: vars.$medium) {
+        font-size: 1.5rem;
+        margin: 5rem 0 6rem;
+      }
+    }
+  }
+
+  .services {
+    line-height: 2rem;
+    margin: 4rem 0;
+
+    p {
+      margin: 1rem 0;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 2rem;
+    }
+
+    a {
+      border-radius: 2px;
+      font-weight: bold;
+
+      &:hover, &:focus {
+        background-color: #fff;
+        color: vars.$mainColor;
+      }
+  
+      &:active {
+        text-decoration: underline;
+      }
+    }
+  }
 }

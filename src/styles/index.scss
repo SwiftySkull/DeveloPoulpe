@@ -6,4 +6,18 @@ body {
   background: vars.$background;
   font-family: vars.$mono;
   color: vars.$textColor;
+
+  // #background {
+  //   width: 20px;
+  //   height: 100%;
+  //   position: fixed;
+  //   top: 0;
+  //   left: calc(50% - 10px);
+  //   background: linear-gradient(90deg, black, #f0f, black);
+  //   z-index: -1;
+  // }
+}
+
+html {
+  scroll-behavior: smooth;
 }
