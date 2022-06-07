@@ -1,11 +1,9 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
 // == Import
-import UnderConstruction from 'src/components/UnderConstruction';
 import legal from 'src/data/Languages-files/legal';
 
 import './legal.scss';
@@ -46,11 +44,6 @@ const Legal = ({
   return (
     <div id="legal">
       <h2>{legal[language].title}</h2>
-      {/* {language === 'en' && (
-        <div style={{ position: 'relative', width: '100%', height: '300px' }}>
-          <UnderConstruction title={`English ${legal[language].title} Translation`} />
-        </div>
-      )} */}
       <p>{legal[language].p1}</p>
       <div dangerouslySetInnerHTML={createMarkup(legal[language].edit)} />
       <div dangerouslySetInnerHTML={createMarkup(legal[language].heb)} />

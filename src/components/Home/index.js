@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';

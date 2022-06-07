@@ -3,9 +3,7 @@
 #cookiePopup {
   position: fixed;
   bottom: 0;
-  background: vars.$secondColor;
-  // background: vars.$background;
-  // border: 10px solid vars.$mainColor;
+  background: vars.$bottomBackgroundColor;
   border-radius: 10px;
   width: 100%;
   padding: 10px;
@@ -23,7 +21,7 @@
     border-radius: 100%;
 
     &:focus, &:hover {
-      background-color: purple;
+      background-color: vars.$mainColor;
     }
 
     &:active {

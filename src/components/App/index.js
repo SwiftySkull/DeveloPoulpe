@@ -5,20 +5,21 @@ import { Route, Routes } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
 // == Import
+import Algues from 'src/components/Algues';
+import Bubble from 'src/components/Bubble';
 import Contact from 'src/containers/Contact';
 import Cookie from 'src/containers/Cookie';
 import CookiePopup from 'src/containers/Cookie/CookiePopup';
-import Home from 'src/containers/Home';
-import Header from 'src/containers/Header';
-import Identity from 'src/containers/Identity';
+import Error from 'src/containers/Error';
 import Footer from 'src/containers/Footer';
+import Header from 'src/containers/Header';
+import Home from 'src/containers/Home';
+import Identity from 'src/containers/Identity';
 import Lang from 'src/containers/Lang';
 import Legal from 'src/containers/Legal';
 import Projects from 'src/containers/Projects';
 import SiteMap from 'src/containers/SiteMap';
 import TopButton from 'src/containers/TopButton';
-import Bubble from 'src/components/Bubble';
-import Algues from 'src/components/Algues';
 
 import './app.scss';
 
@@ -87,7 +88,7 @@ const App = ({
         <Route path={legalUrl} element={<Legal />} />
         <Route path={`${changeLangUrl}/:lang`} element={<Lang />} />
         <Route path={homeUrl} element={<Home />} />
-        {/* <Route path="*" element={<Error />} /> */}
+        <Route path="*" element={<Error />} />
       </Routes>
       <CookiePopup />
       <TopButton />
@@ -116,9 +117,9 @@ App.propTypes = {
   hideTopButton: PropTypes.func.isRequired,
 };
 
-App.defaultProps = {
+// App.defaultProps = {
 
-};
+// };
 
 // == Export
 export default App;

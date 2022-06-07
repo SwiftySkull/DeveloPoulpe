@@ -1,6 +1,6 @@
 // // == Import npm
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 // == Import
 import './algues.scss';
@@ -14,18 +14,20 @@ import algue6 from 'src/assets/images/algue6.png';
 import algue7 from 'src/assets/images/algue7.png';
 import algue8 from 'src/assets/images/algue8.png';
 
-// == Composant
-const Algues = ({
-
-}) => {
+// == Component which handles the movements of the seaweeds
+/**
+ * Component which handles the movements of the seaweeds
+ */
+const Algues = () => {
   useEffect(() => {
 
   }, []);
 
-  const timer = [];
   const decal = [];
+
   const totalRound = 100;
-  const allAlgues = [
+
+  const allSeaweeds = [
     algue1,
     algue2,
     algue3,
@@ -35,7 +37,8 @@ const Algues = ({
     algue7,
     algue8,
   ];
-  const alguesMoves = [
+
+  const seaweedsMoves = [
     'flow1',
     'flow2',
     'flow3',
@@ -53,30 +56,30 @@ const Algues = ({
 
   function randomAlgue() {
     const algue = Math.floor(Math.random() * 8);
-    return allAlgues[algue];
+    return allSeaweeds[algue];
   }
 
   function randomFlow() {
     const flow = Math.floor(Math.random() * 5);
-    return alguesMoves[flow];
+    return seaweedsMoves[flow];
   }
 
   return (
     <div id="algues">
-      {decal.map((alg, index) => (
+      {decal.map((alg) => (
         <img key={alg} className="algue" style={{ left: `${alg}px`, animation: `${randomFlow()} ${getRandomInt()}s linear infinite` }} src={randomAlgue()} alt="" />
       ))}
     </div>
   );
 };
 
-Algues.propTypes = {
+// Algues.propTypes = {
 
-};
+// };
 
-Algues.defaultProps = {
+// Algues.defaultProps = {
 
-};
+// };
 
 // == Export
 export default Algues;

@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import axios from 'axios';
+// import axios from 'axios';
 import emailjs, { init } from '@emailjs/browser';
 
 import {

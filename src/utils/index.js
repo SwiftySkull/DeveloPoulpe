@@ -1,3 +1,10 @@
+/**
+ * When submitting a request, first function to check if a phone number or an email has been entered
+ *
+ * @param {string} email The email entered or not
+ * @param {string} tel The phone number entered or not
+ * @returns boolean depenging on either one or the other has been entered or none of them
+ */
 export const checkMailOrPhone = (email, tel) => {
   if ((email === '' || email === null || email === undefined) && (tel === '' || tel === null || tel === undefined)) {
     return false;
@@ -6,6 +13,16 @@ export const checkMailOrPhone = (email, tel) => {
   return true;
 };
 
+/**
+ * Validator for the contact request form
+ *
+ * @param {string} name The name entered
+ * @param {string} email The email entered
+ * @param {string} tel The phone number entered
+ * @param {string} subject The subject of the request entered
+ * @param {string} message The message content
+ * @returns boolean True or False depending if the validation if passed or not
+ */
 export const contactValidator = (name, email, tel, subject, message) => {
   let sendRequest = true;
 
@@ -52,6 +69,12 @@ export const contactValidator = (name, email, tel, subject, message) => {
   return sendRequest;
 };
 
+/**
+ * Convert a string into HTML code
+ *
+ * @param {string} text The text to translate into HTML
+ * @returns The text in HTML format
+ */
 export function createMarkup(text) {
   return { __html: text };
 }

@@ -1,7 +1,6 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
 // == Import
@@ -48,7 +47,7 @@ const Cookie = ({
     <div id="cookie">
       <div className="cookie-title">
         <img className="first-cookie" src={cookieImg} alt="Cookie" />
-        <h1>{cookie[language].title}</h1>
+        <h2>{cookie[language].title}</h2>
         <img className="second-cookie" src={cookieImg} alt="Cookie" />
       </div>
       <div className="cookie-content">

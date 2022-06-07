@@ -1,7 +1,7 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Navigate, Link, useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
 // == Import
@@ -57,8 +57,7 @@ Lang.propTypes = {
 };
 
 // Lang.defaultProps = {
-//   /** Default language in French */
-//   language: 'fr',
+
 // };
 
 // == Export

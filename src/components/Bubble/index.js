@@ -1,6 +1,6 @@
 // // == Import npm
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 // == Import
 import './bubble.scss';
@@ -8,9 +8,10 @@ import './bubble.scss';
 import bubble from 'src/assets/images/bulle.png';
 
 // == Composant
-const Bubble = ({
-
-}) => {
+/**
+ * Component which manages the bubble behaviour
+ */
+const Bubble = () => {
   useEffect(() => {
 
   }, []);
@@ -82,13 +83,13 @@ const Bubble = ({
   );
 };
 
-Bubble.propTypes = {
+// Bubble.propTypes = {
 
-};
+// };
 
-Bubble.defaultProps = {
+// Bubble.defaultProps = {
 
-};
+// };
 
 // == Export
 export default Bubble;

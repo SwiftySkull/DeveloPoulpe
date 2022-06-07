@@ -1,7 +1,7 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
 // == Import
@@ -15,7 +15,6 @@ import {
   identityUrl,
   contactUrl,
   cookiesUrl,
-  changeLangUrl,
   homeUrl,
   sitemapUrl,
   legalUrl,

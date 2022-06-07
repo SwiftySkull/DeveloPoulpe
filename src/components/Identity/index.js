@@ -4,13 +4,11 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, Link } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import dateFormat, { i18n } from 'dateformat';
 
 // == Import
 import identity from 'src/data/Languages-files/identity';
-import identityImage from 'src/data/identity';
 import photoID from 'src/assets/images/photoID.png';
 import instagram from 'src/data/instagram';
 import discord from 'src/data/discord';
