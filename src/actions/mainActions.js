@@ -7,6 +7,7 @@ export const UPDATE_FIELD_VALUE = 'UPDATE_FIELD_VALUE';
 export const CHANGE_MENU = 'CHANGE_MENU';
 export const HIDE_TOP_BUTTON = 'HIDE_TOP_BUTTON';
 export const DISPLAY_TOP_BUTTON = 'DISPLAY_TOP_BUTTON';
+export const SAVE_PICTURE = 'SAVE_PICTURE';
 
 // ACTIONS CREATORS
 
@@ -40,4 +41,9 @@ export const hideTopButton = () => ({
 
 export const displayTopButton = () => ({
   type: DISPLAY_TOP_BUTTON,
+});
+
+export const savepicture = (picture) => ({
+  type: SAVE_PICTURE,
+  picture,
 });

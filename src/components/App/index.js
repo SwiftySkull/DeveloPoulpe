@@ -19,7 +19,10 @@ import Lang from 'src/containers/Lang';
 import Legal from 'src/containers/Legal';
 import Projects from 'src/containers/Projects';
 import SiteMap from 'src/containers/SiteMap';
+import Stream from 'src/containers/Stream';
 import TopButton from 'src/containers/TopButton';
+
+import JapanTours from 'src/containers/JapanTours';
 
 import './app.scss';
 
@@ -32,6 +35,8 @@ import {
   homeUrl,
   sitemapUrl,
   legalUrl,
+  streamUrl,
+  conventionVideoUrl,
 } from 'src/data/urls';
 
 // == Composant
@@ -81,6 +86,8 @@ const App = ({
       <Header />
       <Routes>
         <Route path={projectUrl} element={<Projects />} />
+        <Route path={conventionVideoUrl} element={<JapanTours />} />
+        <Route path={streamUrl} element={<Stream />} />
         <Route path={identityUrl} element={<Identity />} />
         <Route path={contactUrl} element={<Contact />} />
         <Route path={cookiesUrl} element={<Cookie />} />
