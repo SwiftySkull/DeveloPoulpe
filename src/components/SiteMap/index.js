@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Cookies from 'universal-cookie';
 
 // == Import
 import siteMap from 'src/data/Languages-files/siteMap';
@@ -14,7 +13,6 @@ import {
   projectUrl,
   identityUrl,
   contactUrl,
-  cookiesUrl,
   homeUrl,
   sitemapUrl,
   legalUrl,
@@ -26,27 +24,15 @@ import {
  * Contact page component
  *
  * @param {string} language Language of the website
- * @param {boolean} cookieStatus Boolean to determine if cookies are accepted or not
  * @param {func} hideTopButton Hide the Back-to-top button
  */
 const SiteMap = ({
   language,
-  cookieStatus,
   hideTopButton,
 }) => {
-  const cookies = new Cookies();
-
   useEffect(() => {
     window.scroll(0, 0);
     hideTopButton();
-
-    if (cookieStatus || cookies.get('cookies-accept') === 'true') {
-      cookies.set('url', sitemapUrl, '/plan-du-site');
-    }
-
-    if (!cookieStatus && cookies.get('cookies-accept') !== 'true') {
-      cookies.remove('url');
-    }
   }, []);
 
   return (
@@ -57,7 +43,6 @@ const SiteMap = ({
         <li><Link to={identityUrl}>{header[language].identity}</Link></li>
         <li><Link to={projectUrl}>{header[language].project}</Link></li>
         <li><Link to={contactUrl}>{header[language].contact}</Link></li>
-        <li><Link to={cookiesUrl}>{header[language].cookies}</Link></li>
         <li><Link to={legalUrl}>{header[language].legal}</Link></li>
         <li><Link to={sitemapUrl}>{header[language].sitemap}</Link></li>
       </ul>
@@ -68,9 +53,6 @@ const SiteMap = ({
 SiteMap.propTypes = {
   /** Language of the website */
   language: PropTypes.string,
-
-  /** Boolean to determine if cookies are accepted or not */
-  cookieStatus: PropTypes.bool.isRequired,
 
   /** Hide the Back-to-top button */
   hideTopButton: PropTypes.func.isRequired,

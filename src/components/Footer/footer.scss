@@ -21,15 +21,11 @@
     }
   }
 
-  >p {
-    text-align: center;
-    margin: 1rem 0;
-  }
-
   .footer-links {
     display: flex;
     padding: 5px;
     flex-direction: column;
+    width: -moz-fit-content;
     width: fit-content;
     margin: 0 auto;
     
@@ -76,52 +72,6 @@
 
     .icons8 {
       border-radius: 2px;
-  
-      &:hover, &:focus {
-        background-color: #fff;
-        color: vars.$mainColor;
-      }
-  
-      &:active {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  .cookies {
-    display: flex;
-    align-items: flex-end;
-    padding: 5px;
-    align-self: center;
-
-    @media (min-width: vars.$medium) {
-      align-self: unset;
-    }
-    
-    .cookie-button {
-      background: unset;
-      border: unset;
-      height: 30px;
-      width: 30px;
-      border-radius: 100%;
-  
-      img {
-        height: 100%;
-      }
-  
-      &:focus, &:hover {
-        background-color: vars.$mainColor;
-      }
-  
-      &:active {
-        background-color: white;
-      }
-    }
-  
-    .cookie-text {
-      border-radius: 2px;
-      margin-right: 1rem;
-      text-align: right;
   
       &:hover, &:focus {
         background-color: #fff;

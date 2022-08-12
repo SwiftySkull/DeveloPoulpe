@@ -14,7 +14,6 @@ import {
   projectUrl,
   identityUrl,
   contactUrl,
-  changeLangUrl,
   homeUrl,
 } from 'src/data/urls';
 
@@ -74,8 +73,8 @@ const Header = ({
           <NavLink onClick={closePresentation} to={contactUrl}>{header[language].contact}</NavLink>
         </div>
       </nav>
-      <Link to={`${changeLangUrl}/fr`} className="language french"><img src={french} alt="Langue française" onClick={() => changeLanguage('fr')} /></Link>
-      <Link to={`${changeLangUrl}/en`} className="language english"><img src={english} alt="English language" onClick={() => changeLanguage('en')} /></Link>
+      <div className="language french"><img src={french} alt="Langue française" onClick={() => changeLanguage('fr')} /></div>
+      <div className="language english"><img src={english} alt="English language" onClick={() => changeLanguage('en')} /></div>
     </div>
   );
 };

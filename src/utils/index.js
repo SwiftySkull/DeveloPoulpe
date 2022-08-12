@@ -1,4 +1,25 @@
 /**
+ * Convert a string into an URL friendly format
+ *
+ * @param {string} string The string to convert
+ * @returns String converted to URL format
+ */
+export const stringToUrl = (string = '') => {
+  const newString = string
+    .trim()
+    .toLowerCase()
+    .replace(/[ '/,]/g, '-')
+    .replace('à', 'a')
+    .replace(/[éèê]/g, 'e')
+    .replace(/[:!?$]/g, '')
+    .replace('ù', 'u')
+    .replace('ô', 'o')
+    .replace('ç', 'c');
+
+  return newString;
+};
+
+/**
  * When submitting a request, first function to check if a phone number or an email has been entered
  *
  * @param {string} email The email entered or not

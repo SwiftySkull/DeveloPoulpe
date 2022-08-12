@@ -19,7 +19,6 @@ import Identity from 'src/components/Identity';
 
 const mapStateToProps = (state) => ({
   language: state.main.language,
-  cookieStatus: state.main.cookieStatus,
   chosenForma: Number(state.identity.chosenForma),
   chosenExpe: Number(state.identity.chosenExpe),
   chosenOtherExpe: Number(state.identity.chosenOtherExpe),

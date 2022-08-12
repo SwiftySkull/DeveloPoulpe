@@ -11,7 +11,6 @@ import Error from 'src/components/Error';
 
 const mapStateToProps = (state) => ({
   language: state.main.language,
-  cookieStatus: state.main.cookieStatus,
 });
 
 /**

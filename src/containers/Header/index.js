@@ -26,8 +26,6 @@ const mapDispatchToProps = (dispatch) => ({
    * @param {string} language Language chosen by the user
    */
   changeLanguage: (language) => {
-    const cookies = new Cookies();
-    cookies.set('lang', language, '/');
     dispatch(changeLanguage(language));
   },
 

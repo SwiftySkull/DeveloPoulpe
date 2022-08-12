@@ -1,7 +1,6 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Cookies from 'universal-cookie';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 // == Import
@@ -11,14 +10,11 @@ import ContactModal from 'src/containers/Contact/ContactModal';
 
 import './contact.scss';
 
-import { contactUrl } from 'src/data/urls';
-
 // == Composant
 /**
  * Contact page component
  *
  * @param {string} language Language of the website
- * @param {boolean} cookieStatus Boolean to determine if cookies are accepted or not
  * @param {string} fieldName Value of the input Name
  * @param {string} fieldEmail Value of the input Email
  * @param {string} fieldTel Value of the input Tel
@@ -33,7 +29,6 @@ import { contactUrl } from 'src/data/urls';
  */
 const Contact = ({
   language,
-  cookieStatus,
   fieldName,
   fieldEmail,
   fieldTel,
@@ -46,19 +41,9 @@ const Contact = ({
   sendRequest,
   hideTopButton,
 }) => {
-  const cookies = new Cookies();
-
   useEffect(() => {
     window.scroll(0, 0);
     hideTopButton();
-
-    if (cookieStatus || cookies.get('cookies-accept') === 'true') {
-      cookies.set('url', contactUrl, '/');
-    }
-
-    if (!cookieStatus && cookies.get('cookies-accept') !== 'true') {
-      cookies.remove('url');
-    }
   }, []);
 
   /** Function to prevent the refresh of the page before sending the request */
@@ -113,9 +98,6 @@ const Contact = ({
 Contact.propTypes = {
   /** Language of the website */
   language: PropTypes.string,
-
-  /** Boolean to determine if cookies are accepted or not */
-  cookieStatus: PropTypes.bool.isRequired,
 
   /** Field values for the form */
   fieldName: PropTypes.string.isRequired,

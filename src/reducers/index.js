@@ -4,7 +4,7 @@ import mainReducer from './mainReducer';
 import contactReducer from './contactReducer';
 import identityReducer from './identityReducer';
 import projectsReducer from './projectsReducer';
-import bddReducer from './bddReducer';
+import picturesReducer from './picturesReducer';
 
 /**
  * Combine all reducers.
@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
   contact: contactReducer,
   identity: identityReducer,
   projects: projectsReducer,
-  bdd: bddReducer,
+  pictures: picturesReducer,
 });
 
 export default rootReducer;

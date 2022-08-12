@@ -1,8 +1,13 @@
 import { connect } from 'react-redux';
 
+import {
+  loadAlbums,
+  openAddMenu,
+} from 'src/actions/picturesActions';
+
 import { hideTopButton } from 'src/actions/mainActions';
 
-import Legal from 'src/components/Legal';
+import OnePicture from 'src/components/Pictures/OnePicture';
 
 /**
  * To display data in the component
@@ -10,6 +15,8 @@ import Legal from 'src/components/Legal';
 
 const mapStateToProps = (state) => ({
   language: state.main.language,
+  albums: state.pictures.albums,
+  addAlbum: state.pictures.addAlbum,
 });
 
 /**
@@ -20,7 +27,15 @@ const mapDispatchToProps = (dispatch) => ({
   hideTopButton: () => {
     dispatch(hideTopButton());
   },
+
+  loadAlbums: () => {
+    dispatch(loadAlbums());
+  },
+
+  openAddMenu: () => {
+    dispatch(openAddMenu());
+  },
 });
 
 // === Assistant creation for the component
-export default connect(mapStateToProps, mapDispatchToProps)(Legal);
+export default connect(mapStateToProps, mapDispatchToProps)(OnePicture);

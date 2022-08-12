@@ -10,7 +10,6 @@ import Home from 'src/components/Home';
 
 const mapStateToProps = (state) => ({
   language: state.main.language,
-  cookieStatus: state.main.cookieStatus,
 });
 
 /**

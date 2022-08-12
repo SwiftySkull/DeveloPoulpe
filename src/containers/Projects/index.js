@@ -11,7 +11,6 @@ import Projects from 'src/components/Projects';
 
 const mapStateToProps = (state) => ({
   language: state.main.language,
-  cookieStatus: state.main.cookieStatus,
   displayedWebsite: state.projects.displayedWebsite,
 });
 

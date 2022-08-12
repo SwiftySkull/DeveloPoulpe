@@ -10,7 +10,6 @@ import SiteMap from 'src/components/SiteMap';
 
 const mapStateToProps = (state) => ({
   language: state.main.language,
-  cookieStatus: state.main.cookieStatus,
 });
 
 /**

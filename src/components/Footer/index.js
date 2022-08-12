@@ -5,13 +5,12 @@ import PropTypes from 'prop-types';
 import { NavLink, Link } from 'react-router-dom';
 
 // == Import
-import cookieImg from 'src/data/cookie';
 import footer from 'src/data/Languages-files/footer';
 import header from 'src/data/Languages-files/header';
 
 import './footer.scss';
 
-import { cookiesUrl, sitemapUrl, legalUrl } from 'src/data/urls';
+import { sitemapUrl, legalUrl } from 'src/data/urls';
 
 // == Composant
 /**
@@ -36,12 +35,8 @@ const Footer = ({
           <Link to={legalUrl} onClick={closePresentation} className="legal-mentions">{header[language].legal}</Link>
           <a className="icons8" href="https://icons8.com/" target="_blank" rel="noreferrer noopener">{footer[language].icons}</a>
         </div>
-        <div className="cookies">
-          <NavLink to={cookiesUrl} onClick={closePresentation} className="cookie-text">{footer[language].title}</NavLink>
-          <Link to={cookiesUrl} onClick={closePresentation} className="cookie-button"><img src={cookieImg} alt="Cookie" /></Link>
-        </div>
+        <p>©️ 2022 DeveloPoulpe</p>
       </div>
-      <p>©️ 2022 DeveloPoulpe</p>
     </div>
   );
 };

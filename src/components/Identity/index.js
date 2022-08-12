@@ -4,7 +4,6 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Cookies from 'universal-cookie';
 import dateFormat, { i18n } from 'dateformat';
 
 // == Import
@@ -18,7 +17,6 @@ import facebook from 'src/data/facebook';
 
 import './identity.scss';
 
-import { identityUrl } from 'src/data/urls';
 import { createMarkup } from 'src/utils';
 
 // == Composant
@@ -26,7 +24,6 @@ import { createMarkup } from 'src/utils';
  * Contact page component
  *
  * @param {string} language Language of the website
- * @param {boolean} cookieStatus Boolean to determine if cookies are accepted or not
  * @param {number} chosenForma ID of the formation chosen to see details
  * @param {function} openForma Open a formation informations
  * @param {function} closeForma Close a formation informations
@@ -40,7 +37,6 @@ import { createMarkup } from 'src/utils';
  */
 const Identity = ({
   language,
-  cookieStatus,
   chosenForma,
   openForma,
   closeForma,
@@ -52,19 +48,9 @@ const Identity = ({
   closeOtherExpe,
   hideTopButton,
 }) => {
-  const cookies = new Cookies();
-
   useEffect(() => {
     window.scroll(0, 0);
     hideTopButton();
-
-    if (cookieStatus || cookies.get('cookies-accept') === 'true') {
-      cookies.set('url', identityUrl, '/');
-    }
-
-    if (!cookieStatus && cookies.get('cookies-accept') !== 'true') {
-      cookies.remove('url');
-    }
   }, []);
 
   i18n.monthNames = [
@@ -279,9 +265,6 @@ const Identity = ({
 Identity.propTypes = {
   /** Language of the website */
   language: PropTypes.string,
-
-  /** Boolean to determine if cookies are accepted or not */
-  cookieStatus: PropTypes.bool.isRequired,
 
   /** ID of the formation chosen to see details */
   chosenForma: PropTypes.number.isRequired,

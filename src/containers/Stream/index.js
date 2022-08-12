@@ -10,7 +10,6 @@ import Stream from 'src/components/Stream';
 
 const mapStateToProps = (state) => ({
   language: state.main.language,
-  cookieStatus: state.main.cookieStatus,
   pictureTaken: state.main.pictureTaken,
 });
 

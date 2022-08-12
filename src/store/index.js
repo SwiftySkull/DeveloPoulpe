@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import mainMiddleware from 'src/middleWares/mainMiddleware';
+import picturesMiddleware from 'src/middleWares/picturesMiddleware';
 
 import reducer from 'src/reducers';
 
@@ -11,6 +12,7 @@ import reducer from 'src/reducers';
 const enhancers = composeWithDevTools(
   applyMiddleware(
     mainMiddleware,
+    picturesMiddleware,
   ),
 );
 

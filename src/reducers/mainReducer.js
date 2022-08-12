@@ -1,7 +1,5 @@
 import {
   CHANGE_LANGUAGE,
-  ACCEPT_COOKIES,
-  REFUSE_COOKIE,
   CHANGE_MENU,
   DISPLAY_TOP_BUTTON,
   HIDE_TOP_BUTTON,
@@ -9,8 +7,6 @@ import {
 
 const initialState = {
   language: 'fr',
-  cookieBox: false,
-  cookieStatus: false,
   menuStatus: false,
   backToTopButton: false,
 };
@@ -48,24 +44,6 @@ function mainReducer(state = initialState, action) {
       return {
         ...state,
         language: action.language,
-      };
-
-    /**
-     * User accepts the cookies and closes the box
-     */
-    case ACCEPT_COOKIES:
-      return {
-        ...state,
-        cookieBox: true,
-        cookieStatus: true,
-      };
-
-    /** User refuses the cookies and closes the box */
-    case REFUSE_COOKIE:
-      return {
-        ...state,
-        cookieBox: true,
-        cookieStatus: false,
       };
 
     default:
