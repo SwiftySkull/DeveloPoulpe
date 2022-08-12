@@ -1,0 +1,30 @@
+// == Screen sizes
+$small: 460px; // vars.$small;
+$medium: 720px; // vars.$medium;
+$inter: 900px; // vars.$inter;
+$large: 1080px; // vars.$large;
+$big: 1300px; // vars.$big;
+$extreme: 1600px; // vars.$extreme;
+
+// == Colors
+$mainColor: rgb(0, 81, 255);; // vars.$mainColor;
+$secondColor: rgb(0, 255, 255); // vars.$secondColor;
+$thirdColor: black; // vars.$thirdColor;
+$textColor: white; // vars.$textColor;
+$bottomBackgroundColor: rgb(0, 1, 44); // vars.$bottomBackgroundColor;
+
+$borderBackground: rgb(0, 0, 0);
+// $background: linear-gradient(90deg, $mainColor, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $mainColor, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground, $borderBackground,$borderBackground, $borderBackground, $borderBackground, $mainColor); // vars.$background;
+$background: linear-gradient(rgb(0, 200, 211),rgb(0, 1, 28)); // vars.$background;
+
+// == Box
+
+$header: 150px; // vars.$header;
+
+// == Fonts
+
+$mono: 'PT Mono', monospace; // vars.$mono;
+$syncopate: 'Syncopate', sans-serif; // vars.$syncopate;
+
+
+// == Hover & Shadows

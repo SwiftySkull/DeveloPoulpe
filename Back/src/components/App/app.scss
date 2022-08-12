@@ -1,0 +1,8 @@
+@use 'src/styles/_vars';
+
+#app {
+  margin-top: calc(vars.$header + 2rem);
+  min-height: calc(100vh - vars.$header - 2rem);
+  position: relative;
+  overflow: hidden;
+}

@@ -1,0 +1,48 @@
+@use 'src/styles/_vars';
+
+#algues {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.5;
+
+  .algue {
+    height: 250px;
+    width: 50px;
+    position: absolute;
+    bottom: -1rem;
+  }
+}
+
+@keyframes flow1 {
+  50% {
+    transform: scale(1.5) rotateX(5deg) skew(10deg, 40deg);
+  }
+}
+
+@keyframes flow2 {
+  50% {
+    transform: scale(1.1) rotate(10deg) skew(0, 30deg);
+  }
+}
+
+@keyframes flow3 {
+  50% {
+    transform: scale(2) rotateY(-10deg) skew(-10deg, -40deg);
+  }
+}
+
+@keyframes flow4 {
+  50% {
+    transform: scale(1.8) rotate(-10deg) skew(-10deg, 30deg);
+  }
+}
+
+@keyframes flow5 {
+  50% {
+    transform: scale(2.2) rotate(-5deg) skew(20deg, -20deg);
+  }
+}

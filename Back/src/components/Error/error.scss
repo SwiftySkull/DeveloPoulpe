@@ -1,0 +1,43 @@
+@use 'src/styles/_vars';
+
+#error {
+  text-align: center;
+
+  h2 {
+    font-family: vars.$syncopate;
+    font-size: 1.8rem;
+  }
+
+  .error {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    img {
+      border-radius: 100%;
+      margin: 3rem 0;
+      max-width: 80%;
+    }
+
+    a {
+      position: absolute;
+      align-self: center;
+
+      button {
+        margin: 1rem 0;
+        border: unset;
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-family: vars.$mono;
+        
+        &:hover, &:focus {
+          background-color: vars.$mainColor;
+        }
+
+        &:active {
+          color: white;
+        }
+      }
+    }
+  }
+}
